@@ -5,7 +5,6 @@
  */
 package laundrypbo.apps.view;
 
-import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -18,13 +17,13 @@ import laundrypbo.apps.model.LaundryModel;
  *
  * @author aliazhar
  */
-public class FormLoginView extends javax.swing.JFrame /* implements FormLoginListener */ {
+public class FormLoginView1 extends javax.swing.JFrame /* implements FormLoginListener */ {
 
   /** Creates new form FormLoginView */
   private LaundryModel model;
   private LaundryController controller;
 
-  public FormLoginView() {
+  public FormLoginView1() {
     model = new LaundryModel();
     controller = new LaundryController();
 
@@ -56,15 +55,17 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         txtPass = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         txtUser = new javax.swing.JTextField();
+        labelUser = new javax.swing.JLabel();
         labelPass = new javax.swing.JLabel();
+        sidePanel = new javax.swing.JPanel();
+        labelIcon = new javax.swing.JLabel();
+        labelTitle1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Form Login");
-        setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        loginPanel.setPreferredSize(new java.awt.Dimension(800, 560));
         loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -74,72 +75,47 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
                 txtPassActionPerformed(evt);
             }
         });
-        loginPanel.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 730, -1));
+        loginPanel.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
 
         btnLogin.setBackground(new java.awt.Color(125, 169, 255));
         btnLogin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("LOGIN");
         btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnLoginMouseClicked(evt);
             }
         });
-        btnLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginActionPerformed(evt);
-            }
-        });
-        loginPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, 170, 50));
+        loginPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 450, 50));
 
         txtUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtUser.setText("  Username");
-        txtUser.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                txtUserFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtUserFocusLost(evt);
-            }
-        });
-        txtUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUserActionPerformed(evt);
-            }
-        });
-        loginPanel.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 730, 50));
+        loginPanel.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 450, 50));
+
+        labelUser.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        labelUser.setText("USERNAME");
+        loginPanel.add(labelUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         labelPass.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         labelPass.setText("PASSWORD");
         loginPanel.add(labelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
-        getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 560));
+        getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 510, 560));
+
+        sidePanel.setBackground(new java.awt.Color(102, 102, 255));
+        sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        labelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/user.png"))); // NOI18N
+        sidePanel.add(labelIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 240, 190));
+
+        labelTitle1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        labelTitle1.setForeground(new java.awt.Color(255, 255, 255));
+        labelTitle1.setText("USER LOGIN");
+        sidePanel.add(labelTitle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+
+        getContentPane().add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 570));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLoginActionPerformed
-
-    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtUserActionPerformed
-
-    private void txtUserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusGained
-        // TODO add your handling code here:
-        if(txtUser.getText().equals("  Username")) {
-            txtUser.setText("");
-        }
-    }//GEN-LAST:event_txtUserFocusGained
-
-    private void txtUserFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusLost
-        if(txtUser.getText().isEmpty()){
-            txtUser.setText("Username");
-            txtUser.setForeground(Color.lightGray);
-        }
-    }//GEN-LAST:event_txtUserFocusLost
 
   private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtPassActionPerformed
     // TODO add your handling code here:
@@ -171,28 +147,33 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         }
       }
     } catch (ClassNotFoundException ex) {
-      java.util.logging.Logger.getLogger(FormLoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(FormLoginView1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (InstantiationException ex) {
-      java.util.logging.Logger.getLogger(FormLoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(FormLoginView1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (IllegalAccessException ex) {
-      java.util.logging.Logger.getLogger(FormLoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(FormLoginView1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-      java.util.logging.Logger.getLogger(FormLoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(FormLoginView1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    // </editor-fold>
     // </editor-fold>
 
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-        new FormLoginView().setVisible(true);
+        new FormLoginView1().setVisible(true);
       }
     });
   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
+    private javax.swing.JLabel labelIcon;
     private javax.swing.JLabel labelPass;
+    private javax.swing.JLabel labelTitle1;
+    private javax.swing.JLabel labelUser;
     private javax.swing.JPanel loginPanel;
+    private javax.swing.JPanel sidePanel;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
