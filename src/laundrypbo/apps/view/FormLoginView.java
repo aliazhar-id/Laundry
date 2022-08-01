@@ -66,6 +66,7 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         loginPanel.setPreferredSize(new java.awt.Dimension(800, 560));
         loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtPass.setEchoChar((char)0);
         txtPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtPass.setForeground(new java.awt.Color(204, 204, 204));
         txtPass.setText("Password");
