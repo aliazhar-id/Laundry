@@ -3,7 +3,6 @@ package laundrypbo.apps.controller;
 import javax.swing.JOptionPane;
 import laundrypbo.apps.model.LaundryModel;
 import laundrypbo.apps.view.FormLoginView;
-import laundrypbo.apps.view.LaundryView;
 /*
  *
  * @author aliazhar

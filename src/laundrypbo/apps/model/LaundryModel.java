@@ -1,6 +1,5 @@
 package laundrypbo.apps.model;
 
-import javax.swing.JOptionPane;
 import laundrypbo.apps.view.FormLoginView;
 import laundrypbo.apps.view.LaundryView;
 
@@ -43,7 +42,6 @@ public class LaundryModel {
   }
 
   public void login(FormLoginView view) {
-    JOptionPane.showMessageDialog(null, "Login Berhasil!");
     LaundryView mainWindow = new LaundryView();
     
     view.dispose();
