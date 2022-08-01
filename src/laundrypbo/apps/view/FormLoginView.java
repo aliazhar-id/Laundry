@@ -104,7 +104,7 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         sidePanel.setBackground(new java.awt.Color(102, 102, 255));
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tugas2/aliazhar/pbo/view/user.png"))); // NOI18N
+        labelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/user.png"))); // NOI18N
         sidePanel.add(labelIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 240, 190));
 
         labelTitle1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
