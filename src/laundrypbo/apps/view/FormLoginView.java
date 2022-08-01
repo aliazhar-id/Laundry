@@ -56,7 +56,6 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         txtPass = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         txtUser = new javax.swing.JTextField();
-        labelPass = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Form Login");
@@ -68,13 +67,24 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         loginPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtPass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtPass.setForeground(new java.awt.Color(204, 204, 204));
+        txtPass.setText("Password");
+        txtPass.setMargin(new java.awt.Insets(2, 10, 2, 2));
         txtPass.setPreferredSize(new java.awt.Dimension(450, 50));
+        txtPass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtPassFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPassFocusLost(evt);
+            }
+        });
         txtPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPassActionPerformed(evt);
             }
         });
-        loginPanel.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 730, -1));
+        loginPanel.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 730, -1));
 
         btnLogin.setBackground(new java.awt.Color(125, 169, 255));
         btnLogin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -90,10 +100,12 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
                 btnLoginActionPerformed(evt);
             }
         });
-        loginPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, 170, 50));
+        loginPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 170, 50));
 
         txtUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(204, 204, 204));
         txtUser.setText("Username");
+        txtUser.setMargin(new java.awt.Insets(2, 10, 2, 2));
         txtUser.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtUserFocusGained(evt);
@@ -108,10 +120,6 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
             }
         });
         loginPanel.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 730, 50));
-
-        labelPass.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        labelPass.setText("PASSWORD");
-        loginPanel.add(labelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 560));
 
@@ -130,17 +138,35 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
     private void txtUserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusGained
         // TODO add your handling code here:
         if(txtUser.getText().equals("Username")) {
-            txtUser.setText("");
             txtUser.setForeground(Color.black);
+            txtUser.setText("");
         }
     }//GEN-LAST:event_txtUserFocusGained
 
     private void txtUserFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusLost
         if(txtUser.getText().isEmpty() || txtUser.getText().equals("Username")){
-            txtUser.setText("Username");
             txtUser.setForeground(Color.lightGray);
+            txtUser.setText("Username");
         }
     }//GEN-LAST:event_txtUserFocusLost
+
+    private void txtPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPassFocusGained
+        // TODO add your handling code here:
+        if(txtPass.getText().equals("Password")){
+            txtPass.setForeground(Color.black);
+            txtPass.setEchoChar('*');
+            txtPass.setText("");
+        }
+    }//GEN-LAST:event_txtPassFocusGained
+
+    private void txtPassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPassFocusLost
+        // TODO add your handling code here:
+        if(txtPass.getText().isEmpty() || txtPass.getText().equals("Password")){
+            txtPass.setForeground(Color.lightGray);
+            txtPass.setEchoChar((char)0);
+            txtPass.setText("Password");
+        }
+    }//GEN-LAST:event_txtPassFocusLost
 
   private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtPassActionPerformed
     // TODO add your handling code here:
@@ -192,7 +218,6 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
-    private javax.swing.JLabel labelPass;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUser;
