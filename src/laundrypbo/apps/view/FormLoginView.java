@@ -131,6 +131,7 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         // TODO add your handling code here:
         if(txtUser.getText().equals("Username")) {
             txtUser.setText("");
+            txtUser.setForeground(Color.black);
         }
     }//GEN-LAST:event_txtUserFocusGained
 
