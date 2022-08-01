@@ -93,7 +93,7 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         loginPanel.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 410, 170, 50));
 
         txtUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtUser.setText("  Username");
+        txtUser.setText("Username");
         txtUser.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtUserFocusGained(evt);
@@ -129,13 +129,13 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
 
     private void txtUserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusGained
         // TODO add your handling code here:
-        if(txtUser.getText().equals("  Username")) {
+        if(txtUser.getText().equals("Username")) {
             txtUser.setText("");
         }
     }//GEN-LAST:event_txtUserFocusGained
 
     private void txtUserFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusLost
-        if(txtUser.getText().isEmpty()){
+        if(txtUser.getText().isEmpty() || txtUser.getText().equals("Username")){
             txtUser.setText("Username");
             txtUser.setForeground(Color.lightGray);
         }
