@@ -44,10 +44,10 @@ public class LaundryModel {
 
   public void login(FormLoginView view) {
     JOptionPane.showMessageDialog(null, "Login Berhasil!");
-//    DashboardView dashboard = new DashboardView();
+    LaundryView mainWindow = new LaundryView();
     
-//    view.dispose();
-//    dashboard.setVisible(true);
+    view.dispose();
+    mainWindow.setVisible(true);
   }
 
   // protected void fireOnChange() {
