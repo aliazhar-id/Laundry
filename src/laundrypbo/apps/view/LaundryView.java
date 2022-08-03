@@ -27,9 +27,16 @@ public class LaundryView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        MenuPanel = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(1200, 860));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        MenuPanel.setBackground(new java.awt.Color(46, 204, 113));
+        MenuPanel.setPreferredSize(new java.awt.Dimension(280, 860));
+        MenuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -79,5 +86,6 @@ public class LaundryView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel MenuPanel;
     // End of variables declaration//GEN-END:variables
 }
