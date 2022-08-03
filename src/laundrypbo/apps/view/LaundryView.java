@@ -5,18 +5,28 @@
  */
 package laundrypbo.apps.view;
 
+import laundrypbo.apps.controller.LaundryController;
+import laundrypbo.apps.model.LaundryModel;
+
 /**
  *
  * @author azkaz
  */
 public class LaundryView extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LaundryView
-     */
-    public LaundryView() {
-        initComponents();
-    }
+  /** Creates new form FormLoginView */
+  private LaundryModel model;
+  private LaundryController controller;
+
+  public LaundryView() {
+    model = new LaundryModel();
+    controller = new LaundryController();
+
+    // model.setFormLoginListener(this);
+    controller.setModel(model);
+
+    initComponents();
+  }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,6 +44,7 @@ public class LaundryView extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("List Pelanggan");
         setPreferredSize(new java.awt.Dimension(1200, 900));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -52,10 +63,20 @@ public class LaundryView extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("Tambah Pelanggan");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         MenuPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 230, 50));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton3.setText("Edit Pelanggan");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -65,6 +86,11 @@ public class LaundryView extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton4.setText("Hapus Pelanggan");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -89,6 +115,22 @@ public class LaundryView extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:]
+        controller.gotoAddWindow(this);
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        controller.gotoEditWindow(this);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        controller.gotoDeleteWindow(this);
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments

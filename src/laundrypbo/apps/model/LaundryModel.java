@@ -1,6 +1,9 @@
 package laundrypbo.apps.model;
 
 import laundrypbo.apps.view.FormLoginView;
+import laundrypbo.apps.view.LaundryCreateView;
+import laundrypbo.apps.view.LaundryDeleteView;
+import laundrypbo.apps.view.LaundryEditView;
 import laundrypbo.apps.view.LaundryView;
 
 /*
@@ -47,6 +50,86 @@ public class LaundryModel {
     view.dispose();
     mainWindow.setVisible(true);
   }
+
+  // Go To List Window
+  public void gotoListWindow(LaundryView view) {
+    view.dispose();
+    LaundryCreateView window = new LaundryCreateView();
+    window.setVisible(true);
+  }
+
+  public void gotoListWindow(LaundryEditView view) {
+    view.dispose();
+    LaundryCreateView window = new LaundryCreateView();
+    window.setVisible(true);
+  }
+
+  public void gotoListWindow(LaundryDeleteView view) {
+    view.dispose();
+    LaundryCreateView window = new LaundryCreateView();
+    window.setVisible(true);
+  }
+
+  // Go To Add Window
+  public void gotoAddWindow(LaundryView view) {
+    view.dispose();
+    LaundryCreateView window = new LaundryCreateView();
+    window.setVisible(true);
+  }
+
+  public void gotoAddWindow(LaundryEditView view) {
+    view.dispose();
+    LaundryCreateView window = new LaundryCreateView();
+    window.setVisible(true);
+  }
+
+  public void gotoAddWindow(LaundryDeleteView view) {
+    view.dispose();
+    LaundryCreateView window = new LaundryCreateView();
+    window.setVisible(true);
+  }
+
+  // Go To Edit Window
+  public void gotoEditWindow(LaundryView view) {
+    view.dispose();
+    LaundryEditView window = new LaundryEditView();
+    window.setVisible(true);
+  }
+
+  public void gotoEditWindow(LaundryCreateView view) {
+    view.dispose();
+    LaundryEditView window = new LaundryEditView();
+    window.setVisible(true);
+  }
+
+  public void gotoEditWindow(LaundryDeleteView view) {
+    view.dispose();
+    LaundryEditView window = new LaundryEditView();
+    window.setVisible(true);
+  }
+
+  // Go To Delete Window
+  public void gotoDeleteWindow(LaundryView view) {
+    view.dispose();
+    LaundryDeleteView window = new LaundryDeleteView();
+    window.setVisible(true);
+  }
+
+  public void gotoDeleteWindow(LaundryCreateView view) {
+    view.dispose();
+    LaundryDeleteView window = new LaundryDeleteView();
+    window.setVisible(true);
+  }
+
+  public void gotoDeleteWindow(LaundryEditView view) {
+    view.dispose();
+    LaundryDeleteView window = new LaundryDeleteView();
+    window.setVisible(true);
+  }
+
+
+
+
 
   // protected void fireOnChange() {
   //   if (formLoginListener != null) {
