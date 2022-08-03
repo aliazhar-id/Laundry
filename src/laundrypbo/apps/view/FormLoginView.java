@@ -66,7 +66,6 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Form Login");
-        setPreferredSize(new java.awt.Dimension(900, 700));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -89,9 +88,21 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
                 txtPassFocusLost(evt);
             }
         });
+        txtPass.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                txtPassInputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+        });
         txtPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPassActionPerformed(evt);
+            }
+        });
+        txtPass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPassKeyTyped(evt);
             }
         });
         loginPanel.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 480, -1));
@@ -116,6 +127,7 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         txtUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtUser.setForeground(new java.awt.Color(204, 204, 204));
         txtUser.setText("Your Username");
+        txtUser.setCaretPosition(0);
         txtUser.setMargin(new java.awt.Insets(2, 10, 2, 2));
         txtUser.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -128,6 +140,11 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserActionPerformed(evt);
+            }
+        });
+        txtUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUserKeyTyped(evt);
             }
         });
         loginPanel.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 480, 50));
@@ -160,8 +177,11 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
     private void txtUserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusGained
         // TODO add your handling code here:
         if(txtUser.getText().equals("Your Username")) {
-            txtUser.setForeground(Color.black);
-            txtUser.setText("");
+//            txtUser.setForeground(Color.black);
+//            txtUser.setText("");
+              txtUser.setCaretPosition(0);
+//              txtUser.setSelectionColor(null);
+//              txtUser.setSelectedTextColor(Color.lightGray);
         }
     }//GEN-LAST:event_txtUserFocusGained
 
@@ -175,9 +195,10 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
     private void txtPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPassFocusGained
         // TODO add your handling code here:
         if(txtPass.getText().equals("Your Password")){
-            txtPass.setForeground(Color.black);
-            txtPass.setEchoChar('*');
-            txtPass.setText("");
+//            txtPass.setForeground(Color.black);
+//            txtPass.setEchoChar('*');
+//            txtPass.setText("");
+              txtPass.setCaretPosition(0);
         }
     }//GEN-LAST:event_txtPassFocusGained
 
@@ -189,6 +210,28 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
             txtPass.setText("Your Password");
         }
     }//GEN-LAST:event_txtPassFocusLost
+
+    private void txtUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyTyped
+        // TODO add your handling code here:
+        if(txtUser.getText().equals("Your Username")) {
+            txtUser.setForeground(Color.black);
+            txtUser.setText("");
+        }
+    }//GEN-LAST:event_txtUserKeyTyped
+
+    private void txtPassInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_txtPassInputMethodTextChanged
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtPassInputMethodTextChanged
+
+    private void txtPassKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyTyped
+        // TODO add your handling code here:
+        if(txtPass.getText().trim().equals("Your Password")) {
+            txtPass.setForeground(Color.black);
+            txtPass.setText("");
+            txtPass.setEchoChar('*');
+        }
+    }//GEN-LAST:event_txtPassKeyTyped
 
   private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtPassActionPerformed
     // TODO add your handling code here:
