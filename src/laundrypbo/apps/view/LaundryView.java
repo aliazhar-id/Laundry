@@ -47,7 +47,9 @@ public class LaundryView extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("List Pelanggan");
         setPreferredSize(new java.awt.Dimension(1200, 900));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MenuPanel.setBackground(new java.awt.Color(255, 76, 48));
