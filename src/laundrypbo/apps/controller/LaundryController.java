@@ -2,11 +2,11 @@ package laundrypbo.apps.controller;
 
 import javax.swing.JOptionPane;
 import laundrypbo.apps.model.LaundryModel;
-import laundrypbo.apps.view.FormLoginView;
-import laundrypbo.apps.view.LaundryCreateView;
-import laundrypbo.apps.view.LaundryDeleteView;
-import laundrypbo.apps.view.LaundryEditView;
-import laundrypbo.apps.view.LaundryView;
+import laundrypbo.apps.view.AddView;
+import laundrypbo.apps.view.DeleteView;
+import laundrypbo.apps.view.EditView;
+import laundrypbo.apps.view.LoginView;
+import laundrypbo.apps.view.LaundryMainView;
 
 /*
  *
@@ -14,6 +14,15 @@ import laundrypbo.apps.view.LaundryView;
  */
 public class LaundryController {
   private LaundryModel model;
+  private AddView addView;
+  private EditView editView;
+  private DeleteView deleteView;
+
+  public LaundryController() {
+    addView = new AddView();
+    editView = new EditView();
+    deleteView = new DeleteView();
+  }
 
   public LaundryModel getModel() {
     return model;
@@ -23,7 +32,7 @@ public class LaundryController {
     this.model = model;
   }
 
-  public void login(FormLoginView view) {
+  public void login(LoginView view) {
     String username = view.getTxtUser().getText();
     String password = view.getTxtPass().getText();
 
@@ -36,82 +45,43 @@ public class LaundryController {
     }
   }
 
-  public void gotoListWindow(LaundryCreateView view) {
-    model.gotoListWindow(view);
+  public void menuList(LaundryMainView main) {
+    main.getMainPanel().removeAll();
+    main.getMainPanel().repaint();
+    main.getMainPanel().revalidate();
+
+    main.getMainPanel().add(main.getListPanel());
+    main.getMainPanel().repaint();
+    main.getMainPanel().revalidate();
   }
 
-  public void gotoListWindow(LaundryEditView view) {
-    model.gotoListWindow(view);
+  public void menuAdd(LaundryMainView main) {
+    main.getMainPanel().removeAll();
+    main.getMainPanel().repaint();
+    main.getMainPanel().revalidate();
+
+    main.getMainPanel().add(addView.getAddPanel());
+    main.getMainPanel().repaint();
+    main.getMainPanel().revalidate();
   }
 
-  public void gotoListWindow(LaundryDeleteView view) {
-    model.gotoListWindow(view);
+  public void menuEdit(LaundryMainView main) {
+    main.getMainPanel().removeAll();
+    main.getMainPanel().repaint();
+    main.getMainPanel().revalidate();
+
+     main.getMainPanel().add(editView.getEditPanel());
+    main.getMainPanel().repaint();
+    main.getMainPanel().revalidate();
   }
 
-  public void gotoAddWindow(LaundryView view) {
-    model.gotoAddWindow(view);
-  }
+  public void menuDelete(LaundryMainView main) {
+    main.getMainPanel().removeAll();
+    main.getMainPanel().repaint();
+    main.getMainPanel().revalidate();
 
-  public void gotoAddWindow(LaundryEditView view) {
-    model.gotoAddWindow(view);
-  }
-
-  public void gotoAddWindow(LaundryDeleteView view) {
-    model.gotoAddWindow(view);
-  }
-
-  public void gotoEditWindow(LaundryCreateView view) {
-    model.gotoEditWindow(view);
-  }
-
-  public void gotoEditWindow(LaundryView view) {
-    model.gotoEditWindow(view);
-  }
-
-  public void gotoEditWindow(LaundryDeleteView view) {
-    model.gotoEditWindow(view);
-  }
-
-  public void gotoDeleteWindow(LaundryCreateView view) {
-    model.gotoDeleteWindow(view);
-  }
-
-  public void gotoDeleteWindow(LaundryView view) {
-    model.gotoDeleteWindow(view);
-  }
-
-  public void gotoDeleteWindow(LaundryEditView view) {
-    model.gotoDeleteWindow(view);
+     main.getMainPanel().add(deleteView.getDeletePanel());
+    main.getMainPanel().repaint();
+    main.getMainPanel().revalidate();
   }
 }
-
-/*
- *
- * @author aliazhar
- */
-// public class FormLoginController {
-// private FormLoginModel model;
-
-// public FormLoginModel getModel() {
-// return model;
-// }
-
-// public void setModel(FormLoginModel model) {
-// this.model = model;
-// }
-
-// public void loginForm(FormLoginView view) {
-// String username = view.getTxtUser().getText();
-// String password = view.getTxtPass().getText();
-
-// if (!username.trim().equals(model.getUsername())) {
-// JOptionPane.showMessageDialog(view, "Username atau Password yang anda
-// masukkan salah!");
-// } else if (!password.trim().equals(model.getPassword())) {
-// JOptionPane.showMessageDialog(view, "Username atau Password yang anda
-// masukkan salah!");
-// } else {
-// model.loginForm(view);
-// }
-// }
-// }

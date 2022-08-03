@@ -6,29 +6,24 @@
 package laundrypbo.apps.view;
 
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Shape;
-import java.awt.geom.RoundRectangle2D;
 import javax.swing.BorderFactory;
-import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import laundrypbo.apps.controller.LaundryController;
-// import tugas2.aliazhar.pbo.event.FormLoginListener;
 import laundrypbo.apps.model.LaundryModel;
 
 /**
  *
  * @author aliazhar
  */
-public class FormLoginView extends javax.swing.JFrame /* implements FormLoginListener */ {
+public class LoginView extends javax.swing.JFrame /* implements FormLoginListener */ {
 
-  /** Creates new form FormLoginView */
+  /** Creates new form LoginView */
   private LaundryModel model;
   private LaundryController controller;
 
-  public FormLoginView() {
+  public LoginView() {
     model = new LaundryModel();
     controller = new LaundryController();
 
@@ -89,10 +84,10 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
             }
         });
         txtPass.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 txtPassInputMethodTextChanged(evt);
-            }
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         txtPass.addActionListener(new java.awt.event.ActionListener() {
@@ -263,20 +258,21 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         }
       }
     } catch (ClassNotFoundException ex) {
-      java.util.logging.Logger.getLogger(FormLoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (InstantiationException ex) {
-      java.util.logging.Logger.getLogger(FormLoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (IllegalAccessException ex) {
-      java.util.logging.Logger.getLogger(FormLoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-      java.util.logging.Logger.getLogger(FormLoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    // </editor-fold>
     // </editor-fold>
 
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-        new FormLoginView().setVisible(true);
+        new LoginView().setVisible(true);
       }
     });
   }
