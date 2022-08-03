@@ -5,6 +5,9 @@
  */
 package laundrypbo.apps.main;
 
+import java.sql.SQLException;
+import laundrypbo.apps.database.DatabaseConnection;
+
 /**
  *
  * @author azkaz
@@ -14,8 +17,12 @@ public class LaundryPBO {
     /**
      * @param args the command line arguments
      */
-    public static void main() {
+    public static void main(String args[]) throws SQLException {
         // TODO code application logic here
+        
+        DatabaseConnection.getConnection();
+        
+        
     }
     
 }
