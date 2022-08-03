@@ -7,14 +7,14 @@ package laundrypbo.apps.view;
 
 /**
  *
- * @author azkaz
+ * @author aliazhar
  */
-public class LaundryView extends javax.swing.JFrame {
+public class LaundryEditView extends javax.swing.JFrame {
 
     /**
-     * Creates new form LaundryView
+     * Creates new form LaundryEditView
      */
-    public LaundryView() {
+    public LaundryEditView() {
         initComponents();
     }
 
@@ -107,30 +107,22 @@ public class LaundryView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LaundryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LaundryEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LaundryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LaundryEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LaundryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LaundryEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LaundryView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LaundryEditView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LaundryView().setVisible(true);
+                new LaundryEditView().setVisible(true);
             }
         });
-    }
-
-    public Object getTxtUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getTxtPass() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
