@@ -36,12 +36,26 @@ public class LaundryController {
     }
   }
 
+  public void gotoListWindow(LaundryCreateView view) {
+    model.gotoListWindow(view);
+  }
+
+  public void gotoListWindow(LaundryEditView view) {
+    model.gotoListWindow(view);
+  }
+
+  public void gotoListWindow(LaundryDeleteView view) {
+    model.gotoListWindow(view);
+  }
+
   public void gotoAddWindow(LaundryView view) {
     model.gotoAddWindow(view);
   }
+
   public void gotoAddWindow(LaundryEditView view) {
     model.gotoAddWindow(view);
   }
+
   public void gotoAddWindow(LaundryDeleteView view) {
     model.gotoAddWindow(view);
   }
@@ -53,10 +67,11 @@ public class LaundryController {
   public void gotoEditWindow(LaundryView view) {
     model.gotoEditWindow(view);
   }
+
   public void gotoEditWindow(LaundryDeleteView view) {
     model.gotoEditWindow(view);
   }
-  
+
   public void gotoDeleteWindow(LaundryCreateView view) {
     model.gotoDeleteWindow(view);
   }
@@ -64,6 +79,7 @@ public class LaundryController {
   public void gotoDeleteWindow(LaundryView view) {
     model.gotoDeleteWindow(view);
   }
+
   public void gotoDeleteWindow(LaundryEditView view) {
     model.gotoDeleteWindow(view);
   }

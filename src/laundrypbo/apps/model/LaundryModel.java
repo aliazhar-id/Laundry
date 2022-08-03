@@ -52,21 +52,21 @@ public class LaundryModel {
   }
 
   // Go To List Window
-  public void gotoListWindow(LaundryView view) {
+  public void gotoListWindow(LaundryCreateView view) {
     view.dispose();
-    LaundryCreateView window = new LaundryCreateView();
+    LaundryView window = new LaundryView();
     window.setVisible(true);
   }
 
   public void gotoListWindow(LaundryEditView view) {
     view.dispose();
-    LaundryCreateView window = new LaundryCreateView();
+    LaundryView window = new LaundryView();
     window.setVisible(true);
   }
 
   public void gotoListWindow(LaundryDeleteView view) {
     view.dispose();
-    LaundryCreateView window = new LaundryCreateView();
+    LaundryView window = new LaundryView();
     window.setVisible(true);
   }
 
