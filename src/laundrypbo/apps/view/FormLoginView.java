@@ -107,7 +107,7 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
         });
         loginPanel.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 480, -1));
 
-        btnLogin.setBackground(new java.awt.Color(46, 204, 113));
+        btnLogin.setBackground(new java.awt.Color(255, 76, 48));
         btnLogin.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("LOGIN");
@@ -159,7 +159,7 @@ public class FormLoginView extends javax.swing.JFrame /* implements FormLoginLis
 
         getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 670));
 
-        sidePanel.setBackground(new java.awt.Color(46, 204, 113));
+        sidePanel.setBackground(new java.awt.Color(255, 76, 48));
         getContentPane().add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 380, 670));
 
         pack();
