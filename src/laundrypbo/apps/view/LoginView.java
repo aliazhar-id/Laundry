@@ -58,6 +58,8 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         sidePanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Form Login");
@@ -84,10 +86,10 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
             }
         });
         txtPass.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 txtPassInputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         txtPass.addActionListener(new java.awt.event.ActionListener() {
@@ -155,6 +157,16 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
         getContentPane().add(loginPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 670));
 
         sidePanel.setBackground(new java.awt.Color(255, 76, 48));
+        sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Selamat Datang Di");
+        sidePanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/mylaundry_large.png"))); // NOI18N
+        sidePanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+
         getContentPane().add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 380, 670));
 
         pack();
@@ -281,6 +293,8 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel sidePanel;
     private javax.swing.JPasswordField txtPass;
