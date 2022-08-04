@@ -5,7 +5,12 @@
  */
 package laundrypbo.apps.view;
 
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import laundrypbo.apps.controller.AddController;
+import laundrypbo.apps.controller.LaundryController;
+import laundrypbo.apps.model.LaundryModel;
 
 /**
  *
@@ -16,12 +21,46 @@ public class AddView extends javax.swing.JFrame {
     /**
      * Creates new form addView
      */
-    public AddView() {
+    private LaundryModel model;
+    // private AddController controller;
+    private LaundryController controller;
+    private LaundryMainView mainView;
+
+    public AddView(LaundryMainView mainView) {
+        model = new LaundryModel();
+        controller = new LaundryController();
+        this.mainView = mainView;
+        controller.setModel(model);
+
         initComponents();
+    }
+
+    private AddView() {
+        
+    }
+
+    public LaundryMainView getMainView() {
+        return mainView;
     }
 
     public JPanel getAddPanel() {
         return addPanel;
+    }
+
+    public JComboBox<String> getComboAddLayanan() {
+        return comboAddLayanan;
+    }
+
+    public JTextField getTxtAddBerat() {
+        return txtAddBerat;
+    }
+
+    public JTextField getTxtAddNama() {
+        return txtAddNama;
+    }
+
+    public JTextField getTxtAddTglMasuk() {
+        return txtAddTglMasuk;
     }
 
     /**
@@ -113,10 +152,12 @@ public class AddView extends javax.swing.JFrame {
 
     private void btnAddSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSaveMouseClicked
         // TODO add your handling code here:
+        controller.saveAdd(this);
     }//GEN-LAST:event_btnAddSaveMouseClicked
 
     private void btnAddResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddResetMouseClicked
         // TODO add your handling code here:
+        controller.resetAdd(this);
     }//GEN-LAST:event_btnAddResetMouseClicked
 
     /**

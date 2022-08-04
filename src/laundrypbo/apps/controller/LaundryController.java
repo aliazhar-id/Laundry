@@ -14,12 +14,12 @@ import laundrypbo.apps.view.LaundryMainView;
  */
 public class LaundryController {
   private LaundryModel model;
-  private AddView addView;
+  // private AddView addView;
   private EditView editView;
   private DeleteView deleteView;
 
   public LaundryController() {
-    addView = new AddView();
+    // addView = new AddView();
     editView = new EditView();
     deleteView = new DeleteView();
   }
@@ -60,6 +60,8 @@ public class LaundryController {
     main.getMainPanel().repaint();
     main.getMainPanel().revalidate();
 
+    AddView addView = new AddView(main);
+
     main.getMainPanel().add(addView.getAddPanel());
     main.getMainPanel().repaint();
     main.getMainPanel().revalidate();
@@ -70,7 +72,7 @@ public class LaundryController {
     main.getMainPanel().repaint();
     main.getMainPanel().revalidate();
 
-     main.getMainPanel().add(editView.getEditPanel());
+    main.getMainPanel().add(editView.getEditPanel());
     main.getMainPanel().repaint();
     main.getMainPanel().revalidate();
   }
@@ -80,8 +82,21 @@ public class LaundryController {
     main.getMainPanel().repaint();
     main.getMainPanel().revalidate();
 
-     main.getMainPanel().add(deleteView.getDeletePanel());
+    main.getMainPanel().add(deleteView.getDeletePanel());
     main.getMainPanel().repaint();
     main.getMainPanel().revalidate();
+  }
+
+  public void saveAdd(AddView addView) {
+    model.saveAdd(addView);
+
+    this.menuList(addView.getMainView());
+  }
+
+  public void resetAdd(AddView addView) {
+    addView.getTxtAddNama().setText("");
+    addView.getComboAddLayanan().setSelectedIndex(0);
+    addView.getTxtAddBerat().setText("");
+    addView.getTxtAddTglMasuk().setText("");
   }
 }

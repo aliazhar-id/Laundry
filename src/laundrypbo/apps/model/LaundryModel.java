@@ -1,6 +1,7 @@
 package laundrypbo.apps.model;
 
 import laundrypbo.apps.view.LoginView;
+import laundrypbo.apps.view.AddView;
 import laundrypbo.apps.view.LaundryMainView;
 
 /*
@@ -36,5 +37,9 @@ public class LaundryModel {
     
     view.dispose();
     mainWindow.setVisible(true);
+  }
+
+  public void saveAdd(AddView addView) {
+    System.out.println("Save Berhasil Ditekan, tapi belum ke database!");
   }
 }
