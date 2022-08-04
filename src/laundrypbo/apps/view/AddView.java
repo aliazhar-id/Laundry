@@ -36,15 +36,15 @@ public class AddView extends javax.swing.JFrame {
         addPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtAddNama = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
+        comboAddLayanan = new javax.swing.JComboBox<>();
+        txtAddBerat = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        txtAddTglMasuk = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAddReset = new javax.swing.JButton();
+        btnAddSave = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,46 +60,64 @@ public class AddView extends javax.swing.JFrame {
         jLabel2.setText("Nama");
         addPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField1.setPreferredSize(new java.awt.Dimension(230, 32));
-        addPanel.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
+        txtAddNama.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtAddNama.setPreferredSize(new java.awt.Dimension(230, 32));
+        addPanel.add(txtAddNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Layanan");
         addPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(180, 32));
-        addPanel.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, -1));
+        comboAddLayanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboAddLayanan.setPreferredSize(new java.awt.Dimension(180, 32));
+        addPanel.add(comboAddLayanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField2.setPreferredSize(new java.awt.Dimension(130, 32));
-        addPanel.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
+        txtAddBerat.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtAddBerat.setPreferredSize(new java.awt.Dimension(130, 32));
+        addPanel.add(txtAddBerat, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Berat (Kg)");
         addPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
-        jTextField3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField3.setPreferredSize(new java.awt.Dimension(150, 32));
-        addPanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
+        txtAddTglMasuk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtAddTglMasuk.setPreferredSize(new java.awt.Dimension(150, 32));
+        addPanel.add(txtAddTglMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Tanggal Masuk");
         addPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
-        jButton1.setText("Reset");
-        jButton1.setPreferredSize(new java.awt.Dimension(100, 31));
-        addPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
+        btnAddReset.setText("Reset");
+        btnAddReset.setPreferredSize(new java.awt.Dimension(100, 31));
+        btnAddReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddResetMouseClicked(evt);
+            }
+        });
+        addPanel.add(btnAddReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
 
-        jButton2.setText("Tambah");
-        jButton2.setPreferredSize(new java.awt.Dimension(100, 31));
-        addPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
+        btnAddSave.setText("Tambah");
+        btnAddSave.setPreferredSize(new java.awt.Dimension(100, 31));
+        btnAddSave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAddSaveMouseClicked(evt);
+            }
+        });
+        addPanel.add(btnAddSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
 
-        getContentPane().add(addPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(addPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSaveMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddSaveMouseClicked
+
+    private void btnAddResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddResetMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddResetMouseClicked
 
     /**
      * @param args the command line arguments
@@ -139,16 +157,16 @@ public class AddView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel addPanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnAddReset;
+    private javax.swing.JButton btnAddSave;
+    private javax.swing.JComboBox<String> comboAddLayanan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField txtAddBerat;
+    private javax.swing.JTextField txtAddNama;
+    private javax.swing.JTextField txtAddTglMasuk;
     // End of variables declaration//GEN-END:variables
 }
