@@ -206,7 +206,7 @@
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/laundrypbo/resources/img/add.png"/>
+                  <Image iconType="3" name="/laundrypbo/resources/img/edit.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -258,7 +258,7 @@
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/laundrypbo/resources/img/add.png"/>
+                  <Image iconType="3" name="/laundrypbo/resources/img/delete.png"/>
                 </Property>
               </Properties>
               <Constraints>

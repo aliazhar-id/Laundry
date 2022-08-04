@@ -136,7 +136,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         jLabel11.setText("Edit Pelanggan");
         btnEditPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/add.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/edit.png"))); // NOI18N
         btnEditPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, -1, -1));
 
         MenuPanel.add(btnEditPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, 50));
@@ -155,7 +155,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         jLabel9.setText("Delete Pelanggan");
         btnDeletePanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/add.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/delete.png"))); // NOI18N
         btnDeletePanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, -1, -1));
 
         MenuPanel.add(btnDeletePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 50));
