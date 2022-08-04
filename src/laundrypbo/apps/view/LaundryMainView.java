@@ -6,6 +6,7 @@
 package laundrypbo.apps.view;
 
 import com.mysql.jdbc.Statement;
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -130,6 +131,12 @@ public class LaundryMainView extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnListPanelMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnListPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnListPanelMouseExited(evt);
+            }
         });
         btnListPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -148,6 +155,12 @@ public class LaundryMainView extends javax.swing.JFrame {
         btnAddPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddPanelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAddPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAddPanelMouseExited(evt);
             }
         });
         btnAddPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -168,6 +181,12 @@ public class LaundryMainView extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnEditPanelMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnEditPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnEditPanelMouseExited(evt);
+            }
         });
         btnEditPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -186,6 +205,12 @@ public class LaundryMainView extends javax.swing.JFrame {
         btnDeletePanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnDeletePanelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDeletePanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDeletePanelMouseExited(evt);
             }
         });
         btnDeletePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -261,6 +286,38 @@ public class LaundryMainView extends javax.swing.JFrame {
         // TODO add your handling code here:
         controller.menuEdit(this);
     }//GEN-LAST:event_btnEditPanelMouseClicked
+
+    private void btnListPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListPanelMouseEntered
+        this.btnListPanel.setBackground(Color.decode("#FE7968"));
+    }//GEN-LAST:event_btnListPanelMouseEntered
+
+    private void btnListPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListPanelMouseExited
+        this.btnListPanel.setBackground(Color.decode("#D64541"));
+    }//GEN-LAST:event_btnListPanelMouseExited
+
+    private void btnAddPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddPanelMouseEntered
+        this.btnAddPanel.setBackground(Color.decode("#FE7968"));
+    }//GEN-LAST:event_btnAddPanelMouseEntered
+
+    private void btnAddPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddPanelMouseExited
+        this.btnAddPanel.setBackground(Color.decode("#D64541"));
+    }//GEN-LAST:event_btnAddPanelMouseExited
+
+    private void btnEditPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditPanelMouseEntered
+       this.btnEditPanel.setBackground(Color.decode("#FE7968"));
+    }//GEN-LAST:event_btnEditPanelMouseEntered
+
+    private void btnEditPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditPanelMouseExited
+        this.btnEditPanel.setBackground(Color.decode("#D64541"));
+    }//GEN-LAST:event_btnEditPanelMouseExited
+
+    private void btnDeletePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanelMouseEntered
+        this.btnDeletePanel.setBackground(Color.decode("#FE7968"));
+    }//GEN-LAST:event_btnDeletePanelMouseEntered
+
+    private void btnDeletePanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanelMouseExited
+        this.btnDeletePanel.setBackground(Color.decode("#D64541"));
+    }//GEN-LAST:event_btnDeletePanelMouseExited
 
   private void btnListPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnListPanelMouseClicked
     // TODO add your handling code here:
