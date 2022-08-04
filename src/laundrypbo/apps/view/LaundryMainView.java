@@ -5,9 +5,16 @@
  */
 package laundrypbo.apps.view;
 
+import com.mysql.jdbc.Statement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 import laundrypbo.apps.controller.LaundryController;
+import laundrypbo.apps.database.KonekDB;
 import laundrypbo.apps.model.LaundryModel;
+
 
 /**
  *
@@ -21,8 +28,13 @@ public class LaundryMainView extends javax.swing.JFrame {
   private AddView addView;
   private EditView editView;
   private DeleteView deleteView;
+  Connection koneksi;
+  
+ 
 
   public LaundryMainView() {
+       koneksi = KonekDB.getKoneksi("localhost", "3306", "root", "", "laundry");
+       // showData();
     model = new LaundryModel();
     controller = new LaundryController();
     addView = new AddView(this);
@@ -30,9 +42,35 @@ public class LaundryMainView extends javax.swing.JFrame {
     deleteView = new DeleteView();
 
     controller.setModel(model);
-
     initComponents();
   }
+
+   DefaultTableModel dtm;
+    public void showData(){
+        String[] kolom = {"ID", "Nama", "Berat", "Layanan", "Harga", "Tanggal masuk", "Tanggal Keluar"};
+        dtm = new DefaultTableModel(null, kolom);
+        try{
+            Statement stmt = (Statement) koneksi.createStatement();
+            String query = "SELECT * FROM laundry";
+            ResultSet rs = stmt.executeQuery(query);
+            int no = 1;
+            while(rs.next()){
+                String id = rs.getString("ID");
+                String nama = rs.getString("nama_customer");
+                String berat = rs.getString("berat");
+                String layanan = rs.getString("jenis_layanan");
+                String harga = rs.getString("harga");
+                String tglmasuk = rs.getString("tanggal_masuk");
+                String tglkeluar = rs.getString("tanggal_keluar");
+                
+                dtm.addRow(new String[]{ id, nama, berat,layanan, harga, tglmasuk, tglkeluar});
+                no++;
+                    }
+            } catch(SQLException ex){
+                ex.printStackTrace();
+        }
+        TblCustomer.setModel(dtm);
+    }
 
   public JPanel getMainPanel() {
     return MainPanel;
@@ -70,7 +108,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         MainPanel = new javax.swing.JPanel();
         listPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TblCustomer = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -170,7 +208,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         listPanel.setPreferredSize(new java.awt.Dimension(597, 200));
         listPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TblCustomer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -189,18 +227,18 @@ public class LaundryMainView extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(4).setResizable(false);
-            jTable1.getColumnModel().getColumn(5).setResizable(false);
+        TblCustomer.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(TblCustomer);
+        if (TblCustomer.getColumnModel().getColumnCount() > 0) {
+            TblCustomer.getColumnModel().getColumn(0).setResizable(false);
+            TblCustomer.getColumnModel().getColumn(1).setResizable(false);
+            TblCustomer.getColumnModel().getColumn(2).setResizable(false);
+            TblCustomer.getColumnModel().getColumn(3).setResizable(false);
+            TblCustomer.getColumnModel().getColumn(4).setResizable(false);
+            TblCustomer.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        listPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 850, 720));
+        listPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 850, 720));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setText("List Transaksi");
@@ -249,7 +287,7 @@ public class LaundryMainView extends javax.swing.JFrame {
      */
     try {
       for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-        if ("Metal".equals(info.getName())) {
+        if ("Windows".equals(info.getName())) {
           javax.swing.UIManager.setLookAndFeel(info.getClassName());
           break;
         }
@@ -271,7 +309,8 @@ public class LaundryMainView extends javax.swing.JFrame {
       }
     });
   }
-
+//  
+  
   public Object getTxtUser() {
     throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose Tools
                                                                    // | Templates.
@@ -285,6 +324,7 @@ public class LaundryMainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel MenuPanel;
+    private javax.swing.JTable TblCustomer;
     private javax.swing.JPanel btnAddPanel;
     private javax.swing.JPanel btnDeletePanel;
     private javax.swing.JPanel btnEditPanel;
@@ -300,7 +340,6 @@ public class LaundryMainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel listPanel;
     // End of variables declaration//GEN-END:variables
 }

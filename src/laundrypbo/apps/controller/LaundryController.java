@@ -49,7 +49,7 @@ public class LaundryController {
     main.getMainPanel().removeAll();
     main.getMainPanel().repaint();
     main.getMainPanel().revalidate();
-
+    main.showData();
     main.getMainPanel().add(main.getListPanel());
     main.getMainPanel().repaint();
     main.getMainPanel().revalidate();
