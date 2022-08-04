@@ -69,7 +69,9 @@ public class LaundryMainView extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         MainPanel = new javax.swing.JPanel();
         listPanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("List Pelanggan");
@@ -168,9 +170,24 @@ public class LaundryMainView extends javax.swing.JFrame {
         listPanel.setPreferredSize(new java.awt.Dimension(597, 200));
         listPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel3.setText("Halaman List Pelanggan");
-        listPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        listPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 850, 720));
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel7.setText("List Transaksi");
+        listPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
         MainPanel.add(listPanel, "card2");
 
@@ -260,11 +277,13 @@ public class LaundryMainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JPanel listPanel;
     // End of variables declaration//GEN-END:variables
 }
