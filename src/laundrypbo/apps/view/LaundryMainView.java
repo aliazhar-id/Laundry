@@ -92,7 +92,7 @@ public class LaundryMainView extends javax.swing.JFrame {
     }
 
     public JPanel getBtnDeletePanel() {
-        return btnDeletePanel;
+        return btnLogOutPanel;
     }
 
     public JPanel getBtnEditPanel() {
@@ -127,9 +127,12 @@ public class LaundryMainView extends javax.swing.JFrame {
         btnEditPanel = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        btnDeletePanel = new javax.swing.JPanel();
+        btnLogOutPanel = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnDeletePanel1 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         btnAboutPanel = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -146,7 +149,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        MenuPanel.setBackground(new java.awt.Color(255, 76, 48));
+        MenuPanel.setBackground(new java.awt.Color(214, 69, 65));
         MenuPanel.setPreferredSize(new java.awt.Dimension(280, 860));
         MenuPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -228,30 +231,55 @@ public class LaundryMainView extends javax.swing.JFrame {
 
         MenuPanel.add(btnEditPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, 50));
 
-        btnDeletePanel.setBackground(new java.awt.Color(214, 69, 65));
-        btnDeletePanel.setPreferredSize(new java.awt.Dimension(280, 500));
-        btnDeletePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnLogOutPanel.setBackground(new java.awt.Color(214, 69, 65));
+        btnLogOutPanel.setPreferredSize(new java.awt.Dimension(280, 500));
+        btnLogOutPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnDeletePanelMouseClicked(evt);
+                btnLogOutPanelMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnDeletePanelMouseEntered(evt);
+                btnLogOutPanelMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnDeletePanelMouseExited(evt);
+                btnLogOutPanelMouseExited(evt);
             }
         });
-        btnDeletePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        btnLogOutPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Hapus Pelanggan");
-        btnDeletePanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
+        jLabel9.setText("Log Out");
+        btnLogOutPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/delete.png"))); // NOI18N
-        btnDeletePanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, -1, -1));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/log-out.png"))); // NOI18N
+        btnLogOutPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, -1, -1));
 
-        MenuPanel.add(btnDeletePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 50));
+        MenuPanel.add(btnLogOutPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 800, -1, 50));
+
+        btnDeletePanel1.setBackground(new java.awt.Color(214, 69, 65));
+        btnDeletePanel1.setPreferredSize(new java.awt.Dimension(280, 500));
+        btnDeletePanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDeletePanel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDeletePanel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDeletePanel1MouseExited(evt);
+            }
+        });
+        btnDeletePanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Hapus Pelanggan");
+        btnDeletePanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/delete.png"))); // NOI18N
+        btnDeletePanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, -1, -1));
+
+        MenuPanel.add(btnDeletePanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 50));
 
         btnAboutPanel.setBackground(new java.awt.Color(214, 69, 65));
         btnAboutPanel.setPreferredSize(new java.awt.Dimension(280, 500));
@@ -270,7 +298,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/about.png"))); // NOI18N
         btnAboutPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, -1, -1));
 
-        MenuPanel.add(btnAboutPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 810, -1, 50));
+        MenuPanel.add(btnAboutPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 750, -1, 50));
 
         getContentPane().add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 870));
 
@@ -341,10 +369,10 @@ public class LaundryMainView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDeletePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanelMouseClicked
+    private void btnLogOutPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogOutPanelMouseClicked
         // TODO add your handling code here:
-        controller.menuDelete(this);
-    }//GEN-LAST:event_btnDeletePanelMouseClicked
+        controller.logOut(this);
+    }//GEN-LAST:event_btnLogOutPanelMouseClicked
 
     private void btnEditPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditPanelMouseClicked
         // TODO add your handling code here:
@@ -375,13 +403,13 @@ public class LaundryMainView extends javax.swing.JFrame {
         // this.btnEditPanel.setBackground(Color.decode("#D64541"));
     }//GEN-LAST:event_btnEditPanelMouseExited
 
-    private void btnDeletePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanelMouseEntered
+    private void btnLogOutPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogOutPanelMouseEntered
         // this.btnDeletePanel.setBackground(Color.decode("#FE7968"));
-    }//GEN-LAST:event_btnDeletePanelMouseEntered
+    }//GEN-LAST:event_btnLogOutPanelMouseEntered
 
-    private void btnDeletePanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanelMouseExited
+    private void btnLogOutPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogOutPanelMouseExited
         // this.btnDeletePanel.setBackground(Color.decode("#D64541"));
-    }//GEN-LAST:event_btnDeletePanelMouseExited
+    }//GEN-LAST:event_btnLogOutPanelMouseExited
 
     private void btnAboutPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAboutPanelMouseClicked
         // TODO add your handling code here:
@@ -415,6 +443,18 @@ public class LaundryMainView extends javax.swing.JFrame {
             q.printStackTrace();
         }
     }//GEN-LAST:event_jBtnDeleteActionPerformed
+
+    private void btnDeletePanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeletePanel1MouseClicked
+
+    private void btnDeletePanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanel1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeletePanel1MouseEntered
+
+    private void btnDeletePanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanel1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeletePanel1MouseExited
 
   private void btnListPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnListPanelMouseClicked
     // TODO add your handling code here:
@@ -481,14 +521,17 @@ public class LaundryMainView extends javax.swing.JFrame {
     private javax.swing.JTable TblCustomer;
     private javax.swing.JPanel btnAboutPanel;
     private javax.swing.JPanel btnAddPanel;
-    private javax.swing.JPanel btnDeletePanel;
+    private javax.swing.JPanel btnDeletePanel1;
     private javax.swing.JPanel btnEditPanel;
     private javax.swing.JPanel btnListPanel;
+    private javax.swing.JPanel btnLogOutPanel;
     private javax.swing.JButton jBtnDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;

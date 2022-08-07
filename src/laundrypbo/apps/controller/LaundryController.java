@@ -131,9 +131,17 @@ public class LaundryController {
         main.getMainPanel().removeAll();
         main.getMainPanel().repaint();
         main.getMainPanel().revalidate();
-        
+
         main.getMainPanel().add(aboutView.getAboutPanel());
         main.getMainPanel().repaint();
         main.getMainPanel().revalidate();
+    }
+
+    public void logOut(LaundryMainView main) {
+        main.dispose();
+
+        LoginView loginWindow = new LoginView();
+
+        loginWindow.setVisible(true);
     }
 }
