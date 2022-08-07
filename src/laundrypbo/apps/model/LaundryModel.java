@@ -3,6 +3,9 @@ package laundrypbo.apps.model;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import laundrypbo.apps.database.KonekDB;
 import laundrypbo.apps.view.AboutView;
@@ -49,14 +52,31 @@ public class LaundryModel {
         mainWindow.showData();
     }
 
-    public void saveAdd(AddView addView) {
+    public void saveAdd(AddView addView) throws ParseException {
         String username_baru = addView.getTxtAddNama().getText();
         int berat = Integer.parseInt(addView.getTxtAddBerat().getText());
-        int harga = 12500;
-        String layanan = "kilat";
+        int harga = 0;
+        int lyn = addView.getComboAddLayanan().getSelectedIndex();
+        String layanan = "test";
         String tgl_masuk = addView.getTxtAddTglMasuk().getText();
-        String tgl_keluar = "16/5/2020";
-
+        String tgl_keluar = "11/11/11";
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar cal  = Calendar.getInstance();
+        
+        cal.setTime(sdf.parse(tgl_masuk));
+        
+        if(lyn == 0){
+            layanan = "reguler";
+            harga = berat * 6000;
+            cal.add(Calendar.DATE, 3);
+            tgl_keluar = sdf.format(cal.getTime());  
+        } else if(lyn == 1){
+            layanan = "kilat"; 
+            harga = berat * 8000;
+            cal.add(Calendar.DATE, 1);
+            tgl_keluar = sdf.format(cal.getTime());}
+          
         // int harga = Integer.parseInt(addView.gettxt.getText());
         System.out.println("Save Berhasil Ditekan, tapi belum ke database!");
         try {
