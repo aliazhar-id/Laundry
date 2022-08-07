@@ -40,6 +40,7 @@ public class AboutAdni extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +52,7 @@ public class AboutAdni extends javax.swing.JFrame {
         AdniPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 435, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel13.setText("Konstribusi:");
+        jLabel13.setText("Kontribusi :");
         AdniPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 663, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -76,6 +77,11 @@ public class AboutAdni extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel16.setText("GITHUB : Warptenftl");
         AdniPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 620, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setText("<html>- Membuat UI Dashboard Utama (Daftar Pelanggan,<br> Tambah Pelanggan, Edit Pelanggan, Hapus Pelanggan)");
+        jLabel2.setToolTipText("");
+        AdniPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 660, 690, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,6 +144,7 @@ public class AboutAdni extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 
 }
