@@ -5,11 +5,13 @@
  */
 package laundrypbo.apps.view;
 
-import com.mysql.jdbc.Statement;
+//import com.mysql.jdbc.Statement;
+import java.sql.Statement;
 import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import laundrypbo.apps.controller.LaundryController;
@@ -136,6 +138,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TblCustomer = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
+        jBtnDelete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Admin My Laundry");
@@ -300,6 +303,11 @@ public class LaundryMainView extends javax.swing.JFrame {
         TblCustomer.setRowHeight(45);
         TblCustomer.getTableHeader().setResizingAllowed(false);
         TblCustomer.getTableHeader().setReorderingAllowed(false);
+        TblCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TblCustomerMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TblCustomer);
         if (TblCustomer.getColumnModel().getColumnCount() > 0) {
             TblCustomer.getColumnModel().getColumn(0).setResizable(false);
@@ -316,6 +324,14 @@ public class LaundryMainView extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setText("Daftar Pelanggan");
         listPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
+
+        jBtnDelete.setText("Delete");
+        jBtnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnDeleteActionPerformed(evt);
+            }
+        });
+        listPanel.add(jBtnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, -1, -1));
 
         MainPanel.add(listPanel, "card2");
 
@@ -371,6 +387,34 @@ public class LaundryMainView extends javax.swing.JFrame {
         // TODO add your handling code here:
         controller.menuAbout(this);
     }//GEN-LAST:event_btnAboutPanelMouseClicked
+
+    int baris;
+    private void TblCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblCustomerMouseClicked
+        // TODO add your handling code here:
+        baris = TblCustomer.getSelectedRow();
+    }//GEN-LAST:event_TblCustomerMouseClicked
+
+    private void jBtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteActionPerformed
+        // TODO add your handling code here:
+        String IdDelete = TblCustomer.getValueAt(baris, 0).toString();
+        
+        try{
+            Statement stmt = koneksi.createStatement();
+            String query = "DELETE FROM laundry where ID = '"+IdDelete+"';";
+            int success = stmt.executeUpdate(query);
+            if(success == 1){
+                JOptionPane.showMessageDialog(null,"Data berhasil dihapus");
+                dtm.getDataVector().removeAllElements();
+                showData();
+            } else{
+                JOptionPane.showMessageDialog(null,"Data berhasil dihapus");
+            }
+            
+            
+        }catch(SQLException q){
+            q.printStackTrace();
+        }
+    }//GEN-LAST:event_jBtnDeleteActionPerformed
 
   private void btnListPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnListPanelMouseClicked
     // TODO add your handling code here:
@@ -440,6 +484,7 @@ public class LaundryMainView extends javax.swing.JFrame {
     private javax.swing.JPanel btnDeletePanel;
     private javax.swing.JPanel btnEditPanel;
     private javax.swing.JPanel btnListPanel;
+    private javax.swing.JButton jBtnDelete;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
