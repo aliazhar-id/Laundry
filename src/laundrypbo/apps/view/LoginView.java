@@ -62,7 +62,7 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Form Login");
+        setTitle("Login My Laundry");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -86,10 +86,10 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
             }
         });
         txtPass.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 txtPassInputMethodTextChanged(evt);
-            }
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         txtPass.addActionListener(new java.awt.event.ActionListener() {

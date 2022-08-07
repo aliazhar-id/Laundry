@@ -8,7 +8,6 @@ package laundrypbo.apps.view;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import laundrypbo.apps.controller.AddController;
 import laundrypbo.apps.controller.LaundryController;
 import laundrypbo.apps.model.LaundryModel;
 
@@ -92,7 +91,7 @@ public class AddView extends javax.swing.JFrame {
         addPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Buat Transaksi");
+        jLabel1.setText("Tambah Pelanggan");
         addPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -107,7 +106,7 @@ public class AddView extends javax.swing.JFrame {
         jLabel3.setText("Layanan");
         addPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
-        comboAddLayanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboAddLayanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reguler", "Kilat" }));
         comboAddLayanan.setPreferredSize(new java.awt.Dimension(180, 32));
         addPanel.add(comboAddLayanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, -1));
 

@@ -81,6 +81,28 @@ public class LaundryMainView extends javax.swing.JFrame {
     return listPanel;
   }
 
+    public JPanel getBtnAboutPanel() {
+        return btnAboutPanel;
+    }
+
+    public JPanel getBtnAddPanel() {
+        return btnAddPanel;
+    }
+
+    public JPanel getBtnDeletePanel() {
+        return btnDeletePanel;
+    }
+
+    public JPanel getBtnEditPanel() {
+        return btnEditPanel;
+    }
+
+    public JPanel getBtnListPanel() {
+        return btnListPanel;
+    }
+
+  
+  
   /**
    * This method is called from within the constructor to initialize the form.
    * WARNING: Do NOT modify this code. The content of this method is always
@@ -106,6 +128,9 @@ public class LaundryMainView extends javax.swing.JFrame {
         btnDeletePanel = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        btnAboutPanel = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         MainPanel = new javax.swing.JPanel();
         listPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -113,7 +138,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("List Pelanggan");
+        setTitle("Admin My Laundry");
         setPreferredSize(new java.awt.Dimension(1200, 900));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -142,7 +167,7 @@ public class LaundryMainView extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("List Pelanggan");
+        jLabel5.setText("Daftar Pelanggan");
         btnListPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/list.png"))); // NOI18N
@@ -217,13 +242,32 @@ public class LaundryMainView extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Delete Pelanggan");
+        jLabel9.setText("Hapus Pelanggan");
         btnDeletePanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/delete.png"))); // NOI18N
         btnDeletePanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, -1, -1));
 
         MenuPanel.add(btnDeletePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, 50));
+
+        btnAboutPanel.setBackground(new java.awt.Color(214, 69, 65));
+        btnAboutPanel.setPreferredSize(new java.awt.Dimension(280, 500));
+        btnAboutPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAboutPanelMouseClicked(evt);
+            }
+        });
+        btnAboutPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("About Us");
+        btnAboutPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, -1, -1));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/about.png"))); // NOI18N
+        btnAboutPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 13, -1, -1));
+
+        MenuPanel.add(btnAboutPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 810, -1, 50));
 
         getContentPane().add(MenuPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 870));
 
@@ -233,25 +277,28 @@ public class LaundryMainView extends javax.swing.JFrame {
         listPanel.setPreferredSize(new java.awt.Dimension(597, 200));
         listPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TblCustomer.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         TblCustomer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nama Costumer", "Harga", "Layanan", "Berat", "Tanggal Masuk", "Tanggal Keluar"
+                "Id", "Nama ", "Berat", "Layanan", "Harga", "Tanggal Masuk", "Tanggal Keluar"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        TblCustomer.setRowHeight(45);
+        TblCustomer.getTableHeader().setResizingAllowed(false);
         TblCustomer.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TblCustomer);
         if (TblCustomer.getColumnModel().getColumnCount() > 0) {
@@ -261,12 +308,13 @@ public class LaundryMainView extends javax.swing.JFrame {
             TblCustomer.getColumnModel().getColumn(3).setResizable(false);
             TblCustomer.getColumnModel().getColumn(4).setResizable(false);
             TblCustomer.getColumnModel().getColumn(5).setResizable(false);
+            TblCustomer.getColumnModel().getColumn(6).setResizable(false);
         }
 
         listPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 850, 720));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setText("List Transaksi");
+        jLabel7.setText("Daftar Pelanggan");
         listPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
         MainPanel.add(listPanel, "card2");
@@ -288,36 +336,41 @@ public class LaundryMainView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditPanelMouseClicked
 
     private void btnListPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListPanelMouseEntered
-        this.btnListPanel.setBackground(Color.decode("#FE7968"));
+        // System.out.println(this.btnListPanel.getBackground());
     }//GEN-LAST:event_btnListPanelMouseEntered
 
     private void btnListPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnListPanelMouseExited
-        this.btnListPanel.setBackground(Color.decode("#D64541"));
+        // this.btnListPanel.setBackground(Color.decode("#D64541"));
     }//GEN-LAST:event_btnListPanelMouseExited
 
     private void btnAddPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddPanelMouseEntered
-        this.btnAddPanel.setBackground(Color.decode("#FE7968"));
+        // this.btnAddPanel.setBackground(Color.decode("#FE7968"));
     }//GEN-LAST:event_btnAddPanelMouseEntered
 
     private void btnAddPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddPanelMouseExited
-        this.btnAddPanel.setBackground(Color.decode("#D64541"));
+        // this.btnAddPanel.setBackground(Color.decode("#D64541"));
     }//GEN-LAST:event_btnAddPanelMouseExited
 
     private void btnEditPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditPanelMouseEntered
-       this.btnEditPanel.setBackground(Color.decode("#FE7968"));
+    //    this.btnEditPanel.setBackground(Color.decode("#FE7968"));
     }//GEN-LAST:event_btnEditPanelMouseEntered
 
     private void btnEditPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEditPanelMouseExited
-        this.btnEditPanel.setBackground(Color.decode("#D64541"));
+        // this.btnEditPanel.setBackground(Color.decode("#D64541"));
     }//GEN-LAST:event_btnEditPanelMouseExited
 
     private void btnDeletePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanelMouseEntered
-        this.btnDeletePanel.setBackground(Color.decode("#FE7968"));
+        // this.btnDeletePanel.setBackground(Color.decode("#FE7968"));
     }//GEN-LAST:event_btnDeletePanelMouseEntered
 
     private void btnDeletePanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeletePanelMouseExited
-        this.btnDeletePanel.setBackground(Color.decode("#D64541"));
+        // this.btnDeletePanel.setBackground(Color.decode("#D64541"));
     }//GEN-LAST:event_btnDeletePanelMouseExited
+
+    private void btnAboutPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAboutPanelMouseClicked
+        // TODO add your handling code here:
+        controller.menuAbout(this);
+    }//GEN-LAST:event_btnAboutPanelMouseClicked
 
   private void btnListPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnListPanelMouseClicked
     // TODO add your handling code here:
@@ -382,6 +435,7 @@ public class LaundryMainView extends javax.swing.JFrame {
     private javax.swing.JPanel MainPanel;
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JTable TblCustomer;
+    private javax.swing.JPanel btnAboutPanel;
     private javax.swing.JPanel btnAddPanel;
     private javax.swing.JPanel btnDeletePanel;
     private javax.swing.JPanel btnEditPanel;
@@ -390,6 +444,8 @@ public class LaundryMainView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
