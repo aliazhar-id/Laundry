@@ -59,7 +59,8 @@ public class LaundryController {
         main.getBtnDeletePanel().setBackground(Color.decode("#D64541"));
         main.getBtnAboutPanel().setBackground(Color.decode("#D64541"));
 
-        btnActive.setBackground(Color.decode("#FE7968"));
+        btnActive.setBackground(Color.decode("#B05246"));
+//         btnActive.setBackground(Color.decode("#FE7968"));
     }
 
     public void menuList(LaundryMainView main) {
