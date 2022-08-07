@@ -5,9 +5,6 @@
  */
 package laundrypbo.apps.view;
 
-import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -18,17 +15,17 @@ import laundrypbo.apps.model.LaundryModel;
  *
  * @author aliazhar
  */
-public class AddView extends javax.swing.JFrame {
+public class UbahView extends javax.swing.JFrame {
 
     /**
      * Creates new form addView
      */
     private LaundryModel model;
-    // private AddController controller;
+   // private AddController controller;
     private LaundryController controller;
     private LaundryMainView mainView;
 
-    public AddView(LaundryMainView mainView) {
+    public UbahView(LaundryMainView mainView) {
         model = new LaundryModel();
         controller = new LaundryController();
         this.mainView = mainView;
@@ -37,7 +34,11 @@ public class AddView extends javax.swing.JFrame {
         initComponents();
     }
 
-    private AddView() {
+    public JPanel getUbahPanel() {
+        return UbahPanel;
+    }
+
+    private UbahView() {
         
     }
 
@@ -46,7 +47,7 @@ public class AddView extends javax.swing.JFrame {
     }
 
     public JPanel getAddPanel() {
-        return addPanel;
+        return UbahPanel;
     }
 
     public JComboBox<String> getComboAddLayanan() {
@@ -74,7 +75,7 @@ public class AddView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        addPanel = new javax.swing.JPanel();
+        UbahPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtAddNama = new javax.swing.JTextField();
@@ -90,44 +91,44 @@ public class AddView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        addPanel.setPreferredSize(new java.awt.Dimension(920, 870));
-        addPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        UbahPanel.setPreferredSize(new java.awt.Dimension(920, 870));
+        UbahPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Tambah Pelanggan");
-        addPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
+        jLabel1.setText("Edit Pelanggan");
+        UbahPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Nama");
-        addPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        UbahPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
         txtAddNama.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtAddNama.setPreferredSize(new java.awt.Dimension(230, 32));
-        addPanel.add(txtAddNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
+        UbahPanel.add(txtAddNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Layanan");
-        addPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
+        UbahPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, -1));
 
         comboAddLayanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reguler", "Kilat" }));
         comboAddLayanan.setPreferredSize(new java.awt.Dimension(180, 32));
-        addPanel.add(comboAddLayanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, -1));
+        UbahPanel.add(comboAddLayanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, -1, -1));
 
         txtAddBerat.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtAddBerat.setPreferredSize(new java.awt.Dimension(130, 32));
-        addPanel.add(txtAddBerat, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
+        UbahPanel.add(txtAddBerat, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Berat (Kg)");
-        addPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
+        UbahPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         txtAddTglMasuk.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtAddTglMasuk.setPreferredSize(new java.awt.Dimension(150, 32));
-        addPanel.add(txtAddTglMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
+        UbahPanel.add(txtAddTglMasuk, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Tanggal Masuk");
-        addPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        UbahPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
         btnAddReset.setText("Reset");
         btnAddReset.setPreferredSize(new java.awt.Dimension(100, 31));
@@ -136,7 +137,7 @@ public class AddView extends javax.swing.JFrame {
                 btnAddResetMouseClicked(evt);
             }
         });
-        addPanel.add(btnAddReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
+        UbahPanel.add(btnAddReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 290, -1, -1));
 
         btnAddSave.setText("Tambah");
         btnAddSave.setPreferredSize(new java.awt.Dimension(100, 31));
@@ -145,20 +146,16 @@ public class AddView extends javax.swing.JFrame {
                 btnAddSaveMouseClicked(evt);
             }
         });
-        addPanel.add(btnAddSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
+        UbahPanel.add(btnAddSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, -1, -1));
 
-        getContentPane().add(addPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
+        getContentPane().add(UbahPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSaveMouseClicked
-        try {
-            // TODO add your handling code here:
-            controller.saveAdd(this);
-        } catch (ParseException ex) {
-            Logger.getLogger(AddView.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        // TODO add your handling code here:
+        controller.saveAdd(this);
     }//GEN-LAST:event_btnAddSaveMouseClicked
 
     private void btnAddResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddResetMouseClicked
@@ -183,27 +180,29 @@ public class AddView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UbahView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UbahView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UbahView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UbahView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddView().setVisible(true);
+                new UbahView().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel addPanel;
+    private javax.swing.JPanel UbahPanel;
     private javax.swing.JButton btnAddReset;
     private javax.swing.JButton btnAddSave;
     private javax.swing.JComboBox<String> comboAddLayanan;

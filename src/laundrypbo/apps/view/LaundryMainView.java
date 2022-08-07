@@ -24,6 +24,34 @@ import laundrypbo.apps.model.LaundryModel;
  */
 public class LaundryMainView extends javax.swing.JFrame {
 
+<<<<<<< HEAD
+  /** Creates new form FormLoginView */
+  private LaundryModel model;
+  private LaundryController controller;
+  private AddView addView;
+  private EditView editView;
+  private DeleteView deleteView;
+  Connection koneksi;
+  
+ 
+  String action;
+  public LaundryMainView() {
+       koneksi = KonekDB.getKoneksi("localhost", "3306", "root", "", "laundry");
+       // showData();
+    model = new LaundryModel();
+    controller = new LaundryController();
+    addView = new AddView(this);
+    editView = new EditView();
+    deleteView = new DeleteView();
+
+    controller.setModel(model);
+    initComponents();
+      }
+
+   DefaultTableModel dtm;
+    public void showData(){
+        String[] kolom = {"ID", "Nama", "Berat", "Layanan", "Harga", "Tanggal masuk", "Tanggal Keluar"};
+=======
     /** Creates new form FormLoginView */
     private LaundryModel model;
     private LaundryController controller;
@@ -49,6 +77,7 @@ public class LaundryMainView extends javax.swing.JFrame {
 
     public void showData() {
         String[] kolom = { "ID", "Nama", "Berat", "Layanan", "Harga", "Tanggal masuk", "Tanggal Keluar" };
+>>>>>>> 9db880caef9d3a111ed438d18eca89edb3971637
         dtm = new DefaultTableModel(null, kolom);
         try {
             Statement stmt = (Statement) koneksi.createStatement();
@@ -139,6 +168,7 @@ public class LaundryMainView extends javax.swing.JFrame {
         TblCustomer = new javax.swing.JTable();
         jLabel7 = new javax.swing.JLabel();
         jBtnDelete = new javax.swing.JButton();
+        jBtnEdit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Admin My Laundry");
@@ -364,6 +394,19 @@ public class LaundryMainView extends javax.swing.JFrame {
         });
         listPanel.add(jBtnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 820, -1, -1));
 
+        jBtnEdit.setText("Edit");
+        jBtnEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnEditMouseClicked(evt);
+            }
+        });
+        jBtnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnEditActionPerformed(evt);
+            }
+        });
+        listPanel.add(jBtnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 820, -1, -1));
+
         MainPanel.add(listPanel, "card2");
 
         getContentPane().add(MainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, 920));
@@ -393,8 +436,13 @@ public class LaundryMainView extends javax.swing.JFrame {
 
     private void btnEditPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnEditPanelMouseClicked
         // TODO add your handling code here:
+<<<<<<< HEAD
+       controller.menuEdit(this);
+    }//GEN-LAST:event_btnEditPanelMouseClicked
+=======
         controller.menuEdit(this);
     }// GEN-LAST:event_btnEditPanelMouseClicked
+>>>>>>> 9db880caef9d3a111ed438d18eca89edb3971637
 
     private void btnListPanelMouseEntered(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnListPanelMouseEntered
         if (!this.btnListPanel.getBackground().toString().equals("java.awt.Color[r=176,g=82,b=70]")) {
@@ -503,11 +551,66 @@ public class LaundryMainView extends javax.swing.JFrame {
 
     private void btnAddPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnAddPanelMouseClicked
         // TODO add your handling code here:
+<<<<<<< HEAD
+    }//GEN-LAST:event_btnDeletePanelMouseExited
+
+    private void jBtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEditActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnEditActionPerformed
+
+    private void jBtnEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnEditMouseClicked
+        // TODO add your handling code here:
+        
+        EditView ubah = new EditView();
+        LaundryMainView main = new LaundryMainView();
+        String Id = TblCustomer.getValueAt(baris, 0).toString();
+        String nama = TblCustomer.getValueAt(baris, 1).toString();
+        String berat = TblCustomer.getValueAt(baris, 2).toString();
+        String layanan = TblCustomer.getValueAt(baris, 3).toString();
+        String harga = TblCustomer.getValueAt(baris, 4).toString();
+        String tglM = TblCustomer.getValueAt(baris, 5).toString();
+        String tglK = TblCustomer.getValueAt(baris, 6).toString();
+        
+        
+        ubah.getjTxtNama().setText(nama);
+        ubah.getjTxtBerat().setText(berat);
+        
+    ;
+
+        main.getMainPanel().add(ubah.getEditPanel());
+        main.getMainPanel().repaint();
+        main.getMainPanel().revalidate();
+    }//GEN-LAST:event_jBtnEditMouseClicked
+
+  private void btnListPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnListPanelMouseClicked
+    // TODO add your handling code here:
+    controller.menuList(this);
+  }// GEN-LAST:event_btnListPanelMouseClicked
+
+  private void btnAddPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnAddPanelMouseClicked
+    // TODO add your handling code here:
+    controller.menuAdd(this);
+  }// GEN-LAST:event_btnAddPanelMouseClicked
+
+  /**
+   * @param args the command line arguments
+   */
+  public static void main(String args[]) {
+    /* Set the Nimbus look and feel */
+    // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+    // (optional) ">
+    /*
+     * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+     * look and feel.
+     * For details see
+     * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+=======
         controller.menuAdd(this);
     }// GEN-LAST:event_btnAddPanelMouseClicked
 
     /**
      * @param args the command line arguments
+>>>>>>> 9db880caef9d3a111ed438d18eca89edb3971637
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -572,6 +675,7 @@ public class LaundryMainView extends javax.swing.JFrame {
     private javax.swing.JPanel btnListPanel;
     private javax.swing.JPanel btnLogOutPanel;
     private javax.swing.JButton jBtnDelete;
+    private javax.swing.JButton jBtnEdit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

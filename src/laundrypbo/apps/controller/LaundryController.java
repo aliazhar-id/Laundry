@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import java.awt.Color;
+import java.text.ParseException;
 import laundrypbo.apps.model.LaundryModel;
 import laundrypbo.apps.view.AboutView;
 import laundrypbo.apps.view.AddView;
@@ -113,7 +114,7 @@ public class LaundryController {
         main.getMainPanel().revalidate();
     }
 
-    public void saveAdd(AddView addView) {
+    public void saveAdd(AddView addView) throws ParseException {
         model.saveAdd(addView);
 
         this.menuList(addView.getMainView());
