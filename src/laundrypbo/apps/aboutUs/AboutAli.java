@@ -72,15 +72,15 @@ public class AboutAli extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/ali.jpg"))); // NOI18N
         AliPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel2.setText("- Menyusun Design Pattern MVC dan Dynamic View beserta class-nya");
         AliPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 500, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel4.setText("- Membuat UI Form Login dan Fungsinya");
         AliPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 690, 360, 20));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel5.setText("- Membuat method - method dari UI yang sudah tersedia");
         AliPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 710, 450, -1));
 
