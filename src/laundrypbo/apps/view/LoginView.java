@@ -7,6 +7,7 @@ package laundrypbo.apps.view;
 
 import java.awt.Color;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -60,6 +61,7 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
         sidePanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login My Laundry");
@@ -167,6 +169,14 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/mylaundry_large.png"))); // NOI18N
         sidePanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/github.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        sidePanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 590, -1, -1));
+
         getContentPane().add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 0, 380, 670));
 
         pack();
@@ -240,6 +250,11 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
         }
     }//GEN-LAST:event_txtPassKeyTyped
 
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Repository github project ini: https://github.com/aliazhar-id/Laundry");
+    }//GEN-LAST:event_jLabel5MouseClicked
+
   private void txtPassActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtPassActionPerformed
     // TODO add your handling code here:
   }// GEN-LAST:event_txtPassActionPerformed
@@ -295,6 +310,7 @@ public class LoginView extends javax.swing.JFrame /* implements FormLoginListene
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JPanel sidePanel;
     private javax.swing.JPasswordField txtPass;
