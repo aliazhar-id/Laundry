@@ -34,11 +34,15 @@ public class AboutAli extends javax.swing.JFrame {
         AliPanel = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,31 +50,47 @@ public class AboutAli extends javax.swing.JFrame {
         AliPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel9.setText("NIM     : 10121189");
+        jLabel9.setText("NIM        : 10121189");
         AliPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 482, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel10.setText("NAMA  : MUHAMMAD IZHAM ALI AZHAR");
+        jLabel10.setText("NAMA     : MUHAMMAD IZHAM ALI AZHAR");
         AliPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 388, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel11.setText("EMAIL : izham.10121189@mahasiswa.unikom.ac.id");
-        AliPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 529, -1, -1));
-
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel12.setText("TTL      : Pekanbaru, 24 - Januari - 2003");
+        jLabel12.setText("TTL         : Pekanbaru, 24 - Januari - 2003");
         AliPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 435, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel13.setText("Konstribusi:");
-        AliPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 623, -1, -1));
+        jLabel13.setText("Konstribusi: ");
+        AliPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 660, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel14.setText("NO HP : 082254119188");
-        AliPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 576, -1, -1));
+        jLabel14.setText("GITHUB : aliazhar_id");
+        AliPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/ali.jpg"))); // NOI18N
         AliPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel2.setText("- Menyusun Design Pattern MVC dan Dynamic View beserta class-nya");
+        AliPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 500, -1));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel4.setText("- Membuat UI Form Login dan Fungsinya");
+        AliPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 690, 360, 20));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        jLabel5.setText("- Membuat method - method dari UI yang sudah tersedia");
+        AliPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 710, 450, -1));
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel15.setText("EMAIL    : izham.10121189@mahasiswa.unikom.ac.id");
+        AliPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 529, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel16.setText("NO HP    : 082254119188");
+        AliPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 576, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,7 +100,9 @@ public class AboutAli extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AliPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(AliPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,10 +148,14 @@ public class AboutAli extends javax.swing.JFrame {
     private javax.swing.JPanel AliPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }

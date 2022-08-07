@@ -60,15 +60,15 @@ public class AboutView extends javax.swing.JFrame {
         btnAboutAzka = new javax.swing.JButton();
         btnAboutYuan = new javax.swing.JButton();
         ViewAbout = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
         AdniPanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -169,80 +169,41 @@ public class AboutView extends javax.swing.JFrame {
         ViewAbout.setPreferredSize(new java.awt.Dimension(221, 184));
         ViewAbout.setLayout(new java.awt.CardLayout());
 
-        AdniPanel.setPreferredSize(new java.awt.Dimension(920, 780));
+        AdniPanel.setPreferredSize(new java.awt.Dimension(920, 880));
+        AdniPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel12.setText("TTL      : Batam, 06 - September - 2003");
+        AdniPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 435, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel13.setText("Konstribusi:");
+        AdniPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 663, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setText("NO HP : 081936816852");
+        AdniPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 576, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel10.setText("NIM     : 10121179");
+        AdniPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 482, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel11.setText("NAMA  : MUHAMMAD ADNI TILLA GUMILANG");
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/adni.jpg"))); // NOI18N
+        AdniPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 388, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel15.setText("EMAIL : adni.10121179@mahasiswa.unikom.ac.id");
+        AdniPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 529, -1, -1));
 
-        javax.swing.GroupLayout AdniPanelLayout = new javax.swing.GroupLayout(AdniPanel);
-        AdniPanel.setLayout(AdniPanelLayout);
-        AdniPanelLayout.setHorizontalGroup(
-            AdniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AdniPanelLayout.createSequentialGroup()
-                .addGroup(AdniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AdniPanelLayout.createSequentialGroup()
-                        .addGap(316, 316, 316)
-                        .addComponent(jLabel1))
-                    .addGroup(AdniPanelLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(AdniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel13)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        AdniPanelLayout.setVerticalGroup(
-            AdniPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AdniPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel1)
-                .addGap(62, 62, 62)
-                .addComponent(jLabel11)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel15)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel13)
-                .addContainerGap(78, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/adni.jpg"))); // NOI18N
+        AdniPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(316, 38, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AdniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 914, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AdniPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
-        );
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel16.setText("GITHUB : Warptenftl");
+        AdniPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 620, -1, -1));
 
-        ViewAbout.add(jPanel1, "card2");
+        ViewAbout.add(AdniPanel, "card3");
 
         aboutPanel.add(ViewAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 80, 914, 730));
 
@@ -352,7 +313,7 @@ public class AboutView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel16;
     // End of variables declaration//GEN-END:variables
 
 

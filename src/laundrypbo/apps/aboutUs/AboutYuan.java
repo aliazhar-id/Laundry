@@ -40,82 +40,47 @@ public class AboutYuan extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         YuanPanel.setPreferredSize(new java.awt.Dimension(920, 780));
+        YuanPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/yuan.jpeg"))); // NOI18N
         jLabel4.setPreferredSize(new java.awt.Dimension(500, 500));
+        YuanPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 39, 288, 293));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel9.setText("NIM     : 10121172");
+        YuanPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 482, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel10.setText("NAMA  : YUAN KHRISNA ARADIA");
+        YuanPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 388, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel11.setText("EMAIL : yuan.10121172@mahasiswa.unikom.ac.id");
+        YuanPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 529, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel12.setText("TTL      : Bandung, 18 September 2003");
+        YuanPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 435, -1, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel13.setText("Konstribusi:");
+        YuanPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 660, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel14.setText("NO HP : 082240223828");
+        YuanPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 576, -1, -1));
 
-        javax.swing.GroupLayout YuanPanelLayout = new javax.swing.GroupLayout(YuanPanel);
-        YuanPanel.setLayout(YuanPanelLayout);
-        YuanPanelLayout.setHorizontalGroup(
-            YuanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(YuanPanelLayout.createSequentialGroup()
-                .addGroup(YuanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(YuanPanelLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(YuanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel13)))
-                    .addGroup(YuanPanelLayout.createSequentialGroup()
-                        .addGap(317, 317, 317)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(329, Short.MAX_VALUE))
-        );
-        YuanPanelLayout.setVerticalGroup(
-            YuanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(YuanPanelLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel13)
-                .addGap(46, 46, 46))
-        );
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel21.setText("GITHUB : -");
+        YuanPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 620, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(YuanPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 983, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(YuanPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
-        );
+        getContentPane().add(YuanPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 983, 790));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -164,6 +129,7 @@ public class AboutYuan extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables

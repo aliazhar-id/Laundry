@@ -42,71 +42,44 @@ public class AboutAldi extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         AldiPanel.setPreferredSize(new java.awt.Dimension(920, 780));
+        AldiPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/laundrypbo/resources/img/aldi.jpg"))); // NOI18N
         jLabel4.setPreferredSize(new java.awt.Dimension(500, 500));
+        AldiPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(314, 41, 289, 288));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setText("NIM     : 10121180");
+        AldiPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 486, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setText("NAMA  : ALDIANSYAH AL'AYYUBI");
+        AldiPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 392, 408, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel8.setText("EMAIL : aldiansyah.10121180@mahasiswa.unikom.ac.id");
+        AldiPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 533, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel9.setText("TTL      : SERANG, 23 - APRIL-2003");
+        AldiPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 439, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel10.setText("Konstribusi:");
+        AldiPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 661, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel11.setText("NO HP : 085156436352");
+        AldiPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 580, -1, -1));
 
-        javax.swing.GroupLayout AldiPanelLayout = new javax.swing.GroupLayout(AldiPanel);
-        AldiPanel.setLayout(AldiPanelLayout);
-        AldiPanelLayout.setHorizontalGroup(
-            AldiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AldiPanelLayout.createSequentialGroup()
-                .addGroup(AldiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AldiPanelLayout.createSequentialGroup()
-                        .addGap(314, 314, 314)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(AldiPanelLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(AldiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel10))))
-                .addContainerGap(216, Short.MAX_VALUE))
-        );
-        AldiPanelLayout.setVerticalGroup(
-            AldiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AldiPanelLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addContainerGap(260, Short.MAX_VALUE))
-        );
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel21.setText("GITHUB : -");
+        AldiPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 620, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -161,6 +134,7 @@ public class AboutAldi extends javax.swing.JFrame {
     private javax.swing.JPanel AldiPanel;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

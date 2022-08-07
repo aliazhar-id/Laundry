@@ -319,7 +319,7 @@ public class LaundryMainView extends javax.swing.JFrame {
 
         MainPanel.add(listPanel, "card2");
 
-        getContentPane().add(MainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, -1));
+        getContentPane().add(MainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, 920));
 
         pack();
         setLocationRelativeTo(null);

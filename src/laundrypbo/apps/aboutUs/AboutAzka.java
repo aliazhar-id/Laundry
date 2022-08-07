@@ -39,70 +39,43 @@ public class AboutAzka extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         AzkaPanel.setPreferredSize(new java.awt.Dimension(920, 780));
+        AzkaPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel15.setText("TTL      : Pekanbaru, 24 - Januari - 2003");
+        jLabel15.setText("TTL      : Pekanbaru, 0 - Desember - 200");
+        AzkaPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel16.setText("Konstribusi:");
+        AzkaPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 666, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel17.setText("NO HP : 081221208714");
+        AzkaPanel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 590, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel18.setText("NIM     : 10121203");
+        AzkaPanel.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel19.setText("NAMA  : AZKA ZAKI RAMADHAN");
+        AzkaPanel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel20.setText("EMAIL : izham.10121189@mahasiswa.unikom.ac.id");
+        jLabel20.setText("EMAIL : @mahasiswa.unikom.ac.id");
+        AzkaPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, -1, -1));
 
         jLabel1.setText("jLabel1");
+        AzkaPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 155, -1, -1));
 
-        javax.swing.GroupLayout AzkaPanelLayout = new javax.swing.GroupLayout(AzkaPanel);
-        AzkaPanel.setLayout(AzkaPanelLayout);
-        AzkaPanelLayout.setHorizontalGroup(
-            AzkaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AzkaPanelLayout.createSequentialGroup()
-                .addGroup(AzkaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AzkaPanelLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(AzkaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16)))
-                    .addGroup(AzkaPanelLayout.createSequentialGroup()
-                        .addGap(412, 412, 412)
-                        .addComponent(jLabel1)))
-                .addContainerGap(262, Short.MAX_VALUE))
-        );
-        AzkaPanelLayout.setVerticalGroup(
-            AzkaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AzkaPanelLayout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
-                .addComponent(jLabel19)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel15)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel18)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel20)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel17)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel16)
-                .addGap(47, 47, 47))
-        );
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel21.setText("GITHUB : Deadmandream");
+        AzkaPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,7 +85,10 @@ public class AboutAzka extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AzkaPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AzkaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -163,5 +139,6 @@ public class AboutAzka extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     // End of variables declaration//GEN-END:variables
 }
