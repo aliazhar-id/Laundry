@@ -5,7 +5,17 @@
  */
 package laundrypbo.apps.view;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import laundrypbo.apps.controller.LaundryController;
+import laundrypbo.apps.database.KonekDB;
+import laundrypbo.apps.model.LaundryModel;
 
 /**
  *
@@ -16,7 +26,15 @@ public class EditView extends javax.swing.JFrame {
     /**
      * Creates new form editView
      */
+    
+    private LaundryModel model;
+    private LaundryController controller;
+    private AddView addView;
+    private EditView editView;
+    private DeleteView deleteView;
+    Connection koneksi;
     public EditView() {
+        koneksi = KonekDB.getKoneksi("localhost", "3306", "root", "", "laundry");
         initComponents();
     }
 
@@ -24,6 +42,63 @@ public class EditView extends javax.swing.JFrame {
         return editPanel;
     }
 
+    public JTextField getjTxtBerat() {
+        return jTxtBerat;
+    }
+
+    public void setjTxtBerat(JTextField jTxtBerat) {
+        this.jTxtBerat = jTxtBerat;
+    }
+
+    public JTextField getjTxtNama() {
+        return jTxtNama;
+    }
+
+    public void setjTxtNama(JTextField jTxtNama) {
+        this.jTxtNama = jTxtNama;
+    }
+
+    public JComboBox<String> getComboAddLayanan() {
+        return comboAddLayanan;
+    }
+
+    public JTextField getjTxtTglK() {
+        return jTxtTglK;
+    }
+
+    public JTextField getjTxtTglM() {
+        return jTxtTglM;
+    }
+
+    
+    void showData(String ID){
+        try{
+            Statement stmt = koneksi.createStatement();
+            String query = "SELECT * FROM laundry where ID = '"+ID+"'";
+            ResultSet rs = stmt.executeQuery(query);
+            rs.first();
+            jTxtNama.setText(rs.getString("ID"));
+            comboAddLayanan.setSelectedItem(rs.getString("jenis_layanan"));
+            jTxtBerat.setText(rs.getString("berat"));
+            jTxtTglM.setText(rs.getString("tanggal_masuk"));
+            jTxtTglK.setText(rs.getString("tanggal_keluar"));
+            
+        } catch(SQLException ex){
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null,"Terjadi kesalahan di query");
+        }
+    }
+    
+    public void EditData(){
+        String nama = this.getjTxtNama().getText();
+        String berat = this.getjTxtBerat().getText();
+        String layanan = this.getComboAddLayanan().getSelectedItem().toString();
+        String tgl_masuk = this.getjTxtTglM().getText();
+        String tgl_keluar = this.getjTxtTglK().getText();
+        
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,8 +110,18 @@ public class EditView extends javax.swing.JFrame {
 
         editPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jTxtTglM = new javax.swing.JTextField();
+        jTxtBerat = new javax.swing.JTextField();
+        jTxtTglK = new javax.swing.JTextField();
+        jTxtNama = new javax.swing.JTextField();
+        comboAddLayanan = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -45,25 +130,56 @@ public class EditView extends javax.swing.JFrame {
         editPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setText("Ubah Transaksi");
+        jLabel7.setText("Edit Transaksi");
         editPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Layanan");
+        editPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
-        editPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 850, 720));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Berat (Kg)");
+        editPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
 
-        getContentPane().add(editPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setText("Tanggal Masuk");
+        editPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel5.setText("Tanggal Keluar");
+        editPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel6.setText("Nama");
+        editPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+
+        jTxtTglM.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTxtTglM.setPreferredSize(new java.awt.Dimension(230, 32));
+        editPanel.add(jTxtTglM, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, -1, -1));
+
+        jTxtBerat.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTxtBerat.setPreferredSize(new java.awt.Dimension(230, 32));
+        editPanel.add(jTxtBerat, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 140, -1));
+
+        jTxtTglK.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTxtTglK.setPreferredSize(new java.awt.Dimension(230, 32));
+        editPanel.add(jTxtTglK, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
+
+        jTxtNama.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTxtNama.setPreferredSize(new java.awt.Dimension(230, 32));
+        editPanel.add(jTxtNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, -1, -1));
+
+        comboAddLayanan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Reguler", "Kilat" }));
+        comboAddLayanan.setPreferredSize(new java.awt.Dimension(180, 32));
+        editPanel.add(comboAddLayanan, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
+
+        jButton1.setText("jButton1");
+        editPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, -1, -1));
+
+        jButton2.setText("jButton2");
+        editPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, -1, -1));
+
+        getContentPane().add(editPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 870));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -105,9 +221,19 @@ public class EditView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> comboAddLayanan;
     private javax.swing.JPanel editPanel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTxtBerat;
+    private javax.swing.JTextField jTxtNama;
+    private javax.swing.JTextField jTxtTglK;
+    private javax.swing.JTextField jTxtTglM;
     // End of variables declaration//GEN-END:variables
 }
