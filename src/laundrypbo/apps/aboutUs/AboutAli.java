@@ -74,7 +74,7 @@ public class AboutAli extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel2.setText("- Menyusun Design Pattern MVC dan Dynamic View beserta class-nya");
-        AliPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 500, -1));
+        AliPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 670, 530, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 15)); // NOI18N
         jLabel4.setText("- Membuat UI Form Login dan Fungsinya");
