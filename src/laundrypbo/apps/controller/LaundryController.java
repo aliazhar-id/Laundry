@@ -112,6 +112,7 @@ public class LaundryController {
         String tglM = main.getTblCustomer().getValueAt(main.getBaris(), 5).toString();
         String tglK = main.getTblCustomer().getValueAt(main.getBaris(), 6).toString();
         
+        editView.setID(ID);
         editView.getjTxtNama().setText(nama);
         editView.getjTxtBerat().setText(berat);
         editView.getjTxtTglM().setText(tglM);

@@ -33,6 +33,12 @@ public class EditView extends javax.swing.JFrame {
     private EditView editView;
     private DeleteView deleteView;
     private LaundryMainView mainView;
+    private String ID;
+
+    public String getID() {
+        return ID;
+    }
+    
     Connection koneksi;
     
     public EditView(LaundryMainView mainView) {
@@ -42,6 +48,10 @@ public class EditView extends javax.swing.JFrame {
         this.mainView = mainView;
         controller.setModel(model);
         initComponents();
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 
     public EditView() {
@@ -99,12 +109,33 @@ public class EditView extends javax.swing.JFrame {
         }
     }
     
+   
     public void EditData(){
-        String nama = this.getjTxtNama().getText();
-        String berat = this.getjTxtBerat().getText();
+       
+        String ngaran = this.getjTxtNama().getText();
         String layanan = this.getComboAddLayanan().getSelectedItem().toString();
+        String berat = this.getjTxtBerat().getText();
         String tgl_masuk = this.getjTxtTglM().getText();
         String tgl_keluar = this.getjTxtTglK().getText();
+        
+        //int harga = this.getj
+        
+        try{
+            Statement stmt = koneksi.createStatement();
+            String query = "UPDATE laundry SET nama_customer = '"+ngaran+"', " + "berat = '"+berat+"', " + "jenis_layanan = '"+layanan+"' , " + "tanggal_masuk = '"+tgl_masuk+"' , " + "tanggal_keluar = '"+tgl_keluar+"'  WHERE ID = '"+ID+"' ";
+            
+            System.out.println(query);
+            int success = stmt.executeUpdate(query);
+            if(success == 1){
+                JOptionPane.showMessageDialog(null, "Data berhasil diubah");
+            } else{
+                JOptionPane.showMessageDialog(null, "Data Gagal diubah");
+            }
+            
+        } catch(SQLException ex){
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Terjadi kesalahan pada query");
+        }
         
         
     }
@@ -186,13 +217,23 @@ public class EditView extends javax.swing.JFrame {
         jButton1.setText("jButton1");
         editPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, -1, -1));
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Edit");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         editPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, -1, -1));
 
         getContentPane().add(editPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 870));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        EditData();
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
