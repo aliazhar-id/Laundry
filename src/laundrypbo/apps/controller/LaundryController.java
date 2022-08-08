@@ -21,13 +21,13 @@ public class LaundryController {
 
     private LaundryModel model;
     // private AddView addView;
-    private EditView editView;
+//    private EditView editView;
     private DeleteView deleteView;
     private AboutView aboutView;
 
     public LaundryController() {
         // addView = new AddView();
-        editView = new EditView();
+//        editView = new EditView();
         deleteView = new DeleteView();
         aboutView = new AboutView();
     }
@@ -97,6 +97,8 @@ public class LaundryController {
         main.getMainPanel().repaint();
         main.getMainPanel().revalidate();
 
+        EditView editView = new EditView(main);
+        
         main.getMainPanel().add(editView.getEditPanel());
         main.getMainPanel().repaint();
         main.getMainPanel().revalidate();

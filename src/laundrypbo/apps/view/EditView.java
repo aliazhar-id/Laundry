@@ -32,12 +32,22 @@ public class EditView extends javax.swing.JFrame {
     private AddView addView;
     private EditView editView;
     private DeleteView deleteView;
+    private LaundryMainView mainView;
     Connection koneksi;
-    public EditView() {
+    
+    public EditView(LaundryMainView mainView) {
         koneksi = KonekDB.getKoneksi("localhost", "3306", "root", "", "laundry");
+        model = new LaundryModel();
+        controller = new LaundryController();
+        this.mainView = mainView;
+        controller.setModel(model);
         initComponents();
     }
 
+    public EditView() {
+        
+    }
+    
     public JPanel getEditPanel() {
         return editPanel;
     }

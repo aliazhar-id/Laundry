@@ -40,6 +40,8 @@ public class AboutAzka extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,15 +49,15 @@ public class AboutAzka extends javax.swing.JFrame {
         AzkaPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel15.setText("TTL      : Pekanbaru, 0 - Desember - 200");
+        jLabel15.setText("TTL      : Bandung , 22 - November- 2002");
         AzkaPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel16.setText("Konstribusi:");
+        jLabel16.setText("Kontribusi:");
         AzkaPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 666, -1, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel17.setText("NO HP : 081221208714");
+        jLabel17.setText("NO HP : 085723702577");
         AzkaPanel.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 590, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -67,15 +69,20 @@ public class AboutAzka extends javax.swing.JFrame {
         AzkaPanel.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel20.setText("EMAIL : @mahasiswa.unikom.ac.id");
+        jLabel20.setText("EMAIL : azka,1012120@mahasiswa.unikom.ac.id");
         AzkaPanel.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, -1, -1));
 
         jLabel1.setText("jLabel1");
         AzkaPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 155, -1, -1));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel21.setText("GITHUB : Deadmandream");
-        AzkaPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, -1, -1));
+        jLabel21.setText("connect aplikasi ke database dan membuat fitur2 CRUD");
+        AzkaPanel.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 670, -1, -1));
+        AzkaPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 680, -1, -1));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel22.setText("GITHUB : Deadmandream");
+        AzkaPanel.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 630, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,7 +145,9 @@ public class AboutAzka extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     // End of variables declaration//GEN-END:variables
 }
