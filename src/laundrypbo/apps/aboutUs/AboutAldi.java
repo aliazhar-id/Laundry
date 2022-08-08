@@ -70,7 +70,7 @@ public class AboutAldi extends javax.swing.JFrame {
         AldiPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 439, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel10.setText("Konstribusi:");
+        jLabel10.setText("Konstribusi: -Membuat Tampilan dan Fungsi Halaman About");
         AldiPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 661, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
