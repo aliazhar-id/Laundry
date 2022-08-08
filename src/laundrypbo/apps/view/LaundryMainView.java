@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import laundrypbo.apps.controller.LaundryController;
 import laundrypbo.apps.database.KonekDB;
@@ -400,6 +401,10 @@ public class LaundryMainView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAboutPanelMouseExited
 
+    public JTable getTblCustomer() {
+        return TblCustomer;
+    }
+
     private void btnLogOutPanelMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btnLogOutPanelMouseClicked
         // TODO add your handling code here:
         controller.logOut(this);
@@ -463,7 +468,11 @@ public class LaundryMainView extends javax.swing.JFrame {
         controller.menuAbout(this);
     }// GEN-LAST:event_btnAboutPanelMouseClicked
 
-    int baris;
+    private int baris;
+
+    public int getBaris() {
+        return baris;
+    }
 
     private void TblCustomerMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_TblCustomerMouseClicked
         // TODO add your handling code here:
@@ -523,20 +532,6 @@ public class LaundryMainView extends javax.swing.JFrame {
 
     private void jBtnEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnEditMouseClicked
         // TODO add your handling code here:
-        
-//        LaundryController control = new LaundryController();
-        
-//        EditView ubah = new EditView();
-//        LaundryMainView main = new LaundryMainView();
-//        String Id = TblCustomer.getValueAt(baris, 0).toString();
-//        String nama = TblCustomer.getValueAt(baris, 1).toString();
-//        String berat = TblCustomer.getValueAt(baris, 2).toString();
-//        String layanan = TblCustomer.getValueAt(baris, 3).toString();
-//        String harga = TblCustomer.getValueAt(baris, 4).toString();
-//        String tglM = TblCustomer.getValueAt(baris, 5).toString();
-//        String tglK = TblCustomer.getValueAt(baris, 6).toString();
-//        ubah.getjTxtNama().setText(nama);
-//        ubah.getjTxtBerat().setText(berat);
 
 //        main.getMainPanel().removeAll();
 //       // control.menuList(ubah.getEditPanel());

@@ -102,6 +102,23 @@ public class LaundryController {
         main.getMainPanel().add(editView.getEditPanel());
         main.getMainPanel().repaint();
         main.getMainPanel().revalidate();
+        
+        String ID = main.getTblCustomer().getValueAt(main.getBaris(), 0).toString();
+        
+         String nama = main.getTblCustomer().getValueAt(main.getBaris(), 1).toString();
+        String berat = main.getTblCustomer().getValueAt(main.getBaris(), 2).toString();
+        String layanan = main.getTblCustomer().getValueAt(main.getBaris(), 3).toString();
+        String harga = main.getTblCustomer().getValueAt(main.getBaris(), 4).toString();
+        String tglM = main.getTblCustomer().getValueAt(main.getBaris(), 5).toString();
+        String tglK = main.getTblCustomer().getValueAt(main.getBaris(), 6).toString();
+        
+        editView.getjTxtNama().setText(nama);
+        editView.getjTxtBerat().setText(berat);
+        editView.getjTxtTglM().setText(tglM);
+        editView.getjTxtTglK().setText(tglK);
+        editView.getComboAddLayanan().setSelectedItem(layanan);
+        
+        
     }
 
     public void menuDelete(LaundryMainView main) {
